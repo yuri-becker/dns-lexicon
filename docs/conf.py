@@ -1,8 +1,9 @@
 from os.path import abspath, dirname, join
 
-import toml
+import tomllib
 
-metadata = toml.load(join(dirname(dirname(abspath(__file__))), "pyproject.toml"))["project"]
+with open(join(dirname(dirname(abspath(__file__))), "pyproject.toml")) as file_h:
+    metadata = tomllib.load(file_h)["project"]
 
 master_doc = 'index'
 project = "DNS-Lexicon"
