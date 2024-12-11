@@ -1,0 +1,80 @@
+name: release
+
+on:
+  push:
+    tags: ["v3.*"]
+
+jobs:
+  main:
+    uses: ./.github/workflows/main.yml
+  pypi:
+    runs-on: ubuntu-latest
+    needs: [main]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+      - name: Publish sdist & wheel to PyPI
+        run: |
+          uv build
+          uv publish --username __token__ --password "${PYPI_TOKEN}"
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+  github:
+    runs-on: ubuntu-latest
+    needs: [pypi]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get project version
+        run: echo "VERSION=$(cat pyproject.toml | grep '^version = .*' | sed -E 's/version = "(.*)"/\1/g')" >> $GITHUB_ENV
+      - name: Configure Python
+        uses: actions/setup-python@v5
+      - name: Prepare changelog
+        run: python utils/extract_changelog.py ${VERSION} > release_${VERSION}.md
+      - name: Publish Github release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: DNSroboCert ${{ env.VERSION }}
+          body_path: release_${{ env.VERSION }}.md
+  docker:
+    runs-on: ubuntu-latest
+    needs: [pypi]
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get project version
+        run: echo "VERSION=$(cat pyproject.toml | grep '^version = .*' | sed -E 's/version = "(.*)"/\1/g')" >> $GITHUB_ENV
+      - name: Log-in to the Container registry
+        uses: docker/login-action@3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Build & push Docker image
+        id: push
+        uses: docker/build-push-action@6
+        with:
+          push: true
+          build-args: VERSION=${{ env.VERSION }}
+          tags: |
+            latest
+            ${{ env.VERSION }}
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true

@@ -60,6 +60,7 @@ jobs:
         if: ${{ matrix.toxenv == 'cover' }}
   trigger_readthedoc:
     runs-on: ubuntu-latest
+    needs: [test]
     steps:
       - name: Call RTD webhook
         run: curl -X POST -d "branches=main" -d "token=${RTD_TOKEN}" ${RTD_WEBHOOK}
