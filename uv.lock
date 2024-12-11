@@ -482,7 +482,7 @@ dev = [
     { name = "flake8" },
     { name = "flake8-pyproject" },
     { name = "isort" },
-    { name = "mypy" },
+    { name = "mypy", extra = ["reports"] },
     { name = "packaging" },
     { name = "pytest" },
     { name = "pytest-cov" },
@@ -532,7 +532,7 @@ dev = [
     { name = "flake8", marker = "python_full_version >= '3.9'" },
     { name = "flake8-pyproject" },
     { name = "isort" },
-    { name = "mypy" },
+    { name = "mypy", extras = ["reports"] },
     { name = "packaging" },
     { name = "pytest" },
     { name = "pytest-cov" },
@@ -1065,6 +1065,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/2e/35/f4d8b6d2cb0b3dad63e96caf159419dda023f45a358c6c9ac582ccaee354/mypy-1.13.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:3e38b980e5681f28f033f3be86b099a247b13c491f14bb8b1e1e134d23bb599d", size = 13103591 },
     { url = "https://files.pythonhosted.org/packages/22/1d/80594aef135f921dd52e142fa0acd19df197690bd0cde42cea7b88cf5aa2/mypy-1.13.0-cp39-cp39-win_amd64.whl", hash = "sha256:a6789be98a2017c912ae6ccb77ea553bbaf13d27605d2ca20a76dfbced631b24", size = 9634690 },
     { url = "https://files.pythonhosted.org/packages/3b/86/72ce7f57431d87a7ff17d442f521146a6585019eb8f4f31b7c02801f78ad/mypy-1.13.0-py3-none-any.whl", hash = "sha256:9c250883f9fd81d212e0952c92dbfcc96fc237f4b7c92f56ac81fd48460b3e5a", size = 2647043 },
+]
+
+[package.optional-dependencies]
+reports = [
+    { name = "lxml" },
 ]
 
 [[package]]
