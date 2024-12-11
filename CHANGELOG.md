@@ -1,6 +1,8 @@
 # Changelog
 
 ## master - CURRENT
+### Modified
+* Fix Docker build & migrate image to Github Container registry
 
 ## 3.19.0 - 06/12/2024
 ### Added
