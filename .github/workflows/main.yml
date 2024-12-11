@@ -58,3 +58,11 @@ jobs:
       - name: Publish coverage
         uses: coverallsapp/github-action@v2
         if: ${{ matrix.toxenv == 'cover' }}
+  trigger_readthedoc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call RTD webhook
+        run: curl -X POST -d "branches=main" -d "token=${RTD_TOKEN}" ${RTD_WEBHOOK}
+        env:
+          RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
+          RTD_WEBHOOK: ${{ secrets.RTD_WEBHOOK }}
