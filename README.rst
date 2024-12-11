@@ -6,20 +6,20 @@ Manipulate DNS records on various DNS providers in a standardized/agnostic way.
 
 |build_status| |coverage_status| |docker_pulls| |pypy_version| |pypy_python_support| |github_license|
 
-.. |logo_named| image:: https://raw.githubusercontent.com/AnalogJ/lexicon/master/docs/images/logo_named.svg
+.. |logo_named| image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg
     :alt: Lexicon
 .. |build_status| image:: https://img.shields.io/azure-devops/build/AnalogJ/8425f0f5-0178-4d8c-b1fd-11db7e11b6a7/1/master
-    :target: https://dev.azure.com/AnalogJ/lexicon/_build/latest?definitionId=1&branchName=master
-.. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/AnalogJ/lexicon
-    :target: https://coveralls.io/github/AnalogJ/lexicon?branch=master
+    :target: https://dev.azure.com/dns-lexicon/dns-lexicon/_build/latest?definitionId=1&branchName=master
+.. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon
+    :target: https://coveralls.io/github/dns-lexicon/dns-lexicon?branch=main
 .. |docker_pulls| image:: https://img.shields.io/docker/pulls/analogj/lexicon
     :target: https://hub.docker.com/r/analogj/lexicon
 .. |pypy_version| image:: https://img.shields.io/pypi/v/dns-lexicon
     :target: https://pypi.python.org/pypi/dns-lexicon
 .. |pypy_python_support| image:: https://img.shields.io/pypi/pyversions/dns-lexicon
     :target: https://pypi.python.org/pypi/dns-lexicon
-.. |github_license| image:: https://img.shields.io/github/license/AnalogJ/lexicon
-    :target: https://github.com/AnalogJ/lexicon/blob/master/LICENSE
+.. |github_license| image:: https://img.shields.io/github/license/dns-lexicon/dns-lexicon
+    :target: https://github.com/dns-lexicon/dns-lexicon/blob/master/LICENSE
 
 .. contents:: Table of Contents
    :local:

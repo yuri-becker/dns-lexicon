@@ -20,7 +20,7 @@ To use lexicon as a CLI application, do the following:
 Some providers (like Route53 and TransIP) require additional dependencies. You can install
 the `provider specific dependencies`_ separately:
 
-.. _provider specific dependencies: https://github.com/AnalogJ/lexicon/blob/master/setup.py#L34-L44
+.. _provider specific dependencies: https://github.com/dns-lexicon/dns-lexicon/blob/main/setup.py#L34-L44
 
 .. code-block:: bash
 
@@ -36,13 +36,13 @@ You can also install the latest version from the repository directly.
 
 .. code-block:: bash
 
-    $ pip install git+https://github.com/AnalogJ/lexicon.git
+    $ pip install git+https://github.com/dns-lexicon/dns-lexicon.git
 
 and with Route 53 provider dependencies:
 
 .. code-block:: bash
 
-    $ pip install git+https://github.com/AnalogJ/lexicon.git#egg=dns-lexicon[route53]
+    $ pip install git+https://github.com/dns-lexicon/dns-lexicon.git#egg=dns-lexicon[route53]
 
 .. note::
 

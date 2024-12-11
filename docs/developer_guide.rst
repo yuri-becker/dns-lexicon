@@ -129,8 +129,8 @@ or ``self._get_provider_option('auth_token')`` respectively.
             "additionalpackage >= 1",
         ]
 
-.. _Provider: https://github.com/AnalogJ/lexicon/blob/master/src/lexicon/interfaces.py
-.. _cloudflare.py: https://github.com/AnalogJ/lexicon/blob/master/src/lexicon/providers/cloudflare.py
+.. _Provider: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/interfaces.py
+.. _cloudflare.py: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/providers/cloudflare.py
 .. _provider conventions: https://dns-lexicon.readthedocs.io/en/latest/provider_conventions.html
 
 Testing your provider
@@ -228,8 +228,8 @@ using the ``LEXICON_FOO_AUTH_TOKEN`` environmental variable.
 Notice also that you should pass any required non-secrets arguments programmatically using the
 ``_test_parameters_override()`` method. See `test_powerdns.py`_ for an example.
 
-.. _tests/fixtures/cassettes/: https://github.com/AnalogJ/lexicon/tree/master/tests/fixtures/cassettes
-.. _test_powerdns.py: https://github.com/AnalogJ/lexicon/blob/5ee4d16f9d6206e212c2197f2e53a1db248f5eb9/lexicon/tests/providers/test_powerdns.py#L19
+.. _tests/fixtures/cassettes/: https://github.com/dns-lexicon/dns-lexicon/tree/main/tests/fixtures/cassettes
+.. _test_powerdns.py: https://github.com/dns-lexicon/dns-lexicon/blob/5ee4d16f9d6206e212c2197f2e53a1db248f5eb9/lexicon/tests/providers/test_powerdns.py#L19
 
 Add new tests recordings
 ------------------------
@@ -302,4 +302,4 @@ Finally you should add yourself to the `CODEOWNERS file`_, in the root of the re
 It's my way of keeping track of who to ping when I need updated recordings as the
 test suites expand & change.
 
-.. _CODEOWNERS file: https://github.com/AnalogJ/lexicon/blob/master/CODEOWNERS
+.. _CODEOWNERS file: https://github.com/dns-lexicon/dns-lexicon/blob/master/CODEOWNERS
