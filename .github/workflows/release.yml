@@ -7,9 +7,6 @@ on:
 jobs:
   main:
     uses: ./.github/workflows/main.yml
-    secrets:
-      RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
-      RTD_WEBHOOK: ${{ secrets.RTD_WEBHOOK }}
   pypi:
     runs-on: ubuntu-latest
     needs: [main]
