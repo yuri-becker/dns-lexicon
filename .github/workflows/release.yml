@@ -4,6 +4,10 @@ on:
   push:
     tags: ["v3.*"]
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   main:
     uses: ./.github/workflows/main.yml
@@ -66,11 +70,10 @@ jobs:
         id: push
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
           build-args: VERSION=${{ env.VERSION }}
-          tags: |
-            latest
-            ${{ env.VERSION }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
