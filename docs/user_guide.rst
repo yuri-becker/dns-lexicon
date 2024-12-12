@@ -5,13 +5,16 @@ User guide
 Installation
 ============
 
+Using pip
+~~~~~~~~~
+
 .. warning::
 
     It is strongly advised with pip to install Lexicon in a Python virtual environment,
     in order to avoid interference between Python modules preinstalled on your system as
     OS packages and modules installed by pip (see https://docs.python-guide.org/dev/virtualenvs/).
 
-To use lexicon as a CLI application, do the following:
+To use Lexicon as a CLI application, do the following:
 
 .. code-block:: bash
 
@@ -44,10 +47,19 @@ and with Route 53 provider dependencies:
 
     $ pip install git+https://github.com/dns-lexicon/dns-lexicon.git#egg=dns-lexicon[route53]
 
-.. note::
+Using Docker
+~~~~~~~~~~~~
 
-    As an alternative you can also install Lexicon using the OS packages available for major
-    Linux distributions (see `lexicon` or `dns-lexicon` package in https://pkgs.org/download/lexicon).
+Lexicon is prepackaged as a Docker image available in the Github Container Registry. The name of the image is `ghcr.io/dns-lexicon/dns-lexicon`.
+
+You can either use the latest version available, or pin to a specific version (eg. `ghcr.io/dns-lexicon/dns-lexicon:v3.20.0` to use version `3.20.0`).
+
+Lexicon CLI flags can be passed directly to the Docker image to execute Lexicon:
+
+Using your OS package manager
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Lexicon is available in various Linux distributions. Please search for `lexicon` or `dns-lexicon` package in https://pkgs.org.
 
 Usage
 =====
