@@ -50,7 +50,7 @@ jobs:
         run: uvx --with tox-uv tox -e ${{ matrix.toxenv }}
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results-${{ matrix.os }}-${{ matrix.python }}-${{ matrix.toxenv }}
           path: |
@@ -58,3 +58,19 @@ jobs:
       - name: Publish coverage
         uses: coverallsapp/github-action@v2
         if: ${{ matrix.toxenv == 'cover' }}
+  publish-test-results:
+    needs: [test]
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
+    if: always()
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: "artifacts/**/*.xml"
