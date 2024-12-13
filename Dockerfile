@@ -12,6 +12,5 @@ ENV LEXICON_VERSION="${LEXICON_VERSION}"
 RUN pip install "dns-lexicon[full]==${LEXICON_VERSION}"
 
 # Add and configure entrypoint
-COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY --chmod=755 docker/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
