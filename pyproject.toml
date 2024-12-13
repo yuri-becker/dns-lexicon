@@ -163,5 +163,5 @@ commands = [[
 # Mypy env will check for types in the Lexicon codebase.
 [tool.tox.env.mypy]
 commands = [[
-    "mypy", "src", "tests", "--xml-report=reports"
+    "mypy", "src", "tests"
 ]]

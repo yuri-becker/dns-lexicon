@@ -49,7 +49,7 @@ jobs:
       - name: Run tox
         run: uvx --with tox-uv tox -e ${{ matrix.toxenv }}
       - name: Upload test results
-        if: always()
+        if: ${{ !cancelled() && matrix.toxenv != 'lint' && matrix.toxenv != 'mypy' }}
         uses: actions/upload-artifact@v4
         with:
           name: test-results-${{ matrix.os }}-${{ matrix.python }}-${{ matrix.toxenv }}
@@ -57,14 +57,14 @@ jobs:
             reports/*.xml
       - name: Publish coverage
         uses: coverallsapp/github-action@v2
-        if: ${{ matrix.toxenv == 'cover' }}
+        if: ${{ !cancelled() && matrix.toxenv == 'cover' }}
   publish-test-results:
     needs: [test]
     runs-on: ubuntu-latest
     permissions:
       checks: write
       pull-requests: write
-    if: always()
+    if: ${{ !cancelled() }}
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
