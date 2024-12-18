@@ -11,12 +11,14 @@ jobs:
     runs-on: ubuntu-24.04
     if: github.event.workflow_run.conclusion != 'skipped'
     permissions:
+      contents: read
       checks: write
       pull-requests: write
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
           path: artifacts
       - name: Publish Test Results
