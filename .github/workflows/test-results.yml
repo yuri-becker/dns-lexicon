@@ -55,8 +55,9 @@ jobs:
         if: >
           github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
           github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
-        uses: andymckay/append-gist-action@0.3
+        uses: exuanbo/actions-deploy-gist@v1
         with:
           token: ${{ secrets.GIST_TOKEN }}
-          gistURL: https://gist.githubusercontent.com/adferrand/dns-lexicon-tests-results-badge
-          file: badge.svg
+          gist_id: 5985ab4d62747586f12b0700a0107640
+          file_path: badge.svg
+          file_type: binary
