@@ -8,7 +8,7 @@ Manipulate DNS records on various DNS providers in a standardized/agnostic way.
 
 .. |logo_named| image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg
     :alt: Lexicon
-.. |build_status| image:: https://img.shields.io/azure-devops/build/AnalogJ/8425f0f5-0178-4d8c-b1fd-11db7e11b6a7/1/master
+.. |build_status| image:: https://github.com/dns-lexicon/dns-lexicon/actions/workflows/main.yml/badge.svg
     :target: https://dev.azure.com/dns-lexicon/dns-lexicon/_build/latest?definitionId=1&branchName=master
 .. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon
     :target: https://coveralls.io/github/dns-lexicon/dns-lexicon?branch=main
