@@ -15,24 +15,24 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-24.04, macos-14, windows-2022]
         python: ["3.9", "3.13"]
         toxenv: ["py"]
         exclude:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.13"
             toxenv: py
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.13"
             toxenv: cover
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.13"
             toxenv: light
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.13"
             toxenv: lint
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.13"
             toxenv: mypy
       fail-fast: false
@@ -60,7 +60,7 @@ jobs:
         if: ${{ !cancelled() && matrix.toxenv == 'cover' }}
   publish-test-results:
     needs: [test]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       checks: write
       pull-requests: write
