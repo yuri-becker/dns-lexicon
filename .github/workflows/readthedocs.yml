@@ -14,4 +14,3 @@ jobs:
         env:
           RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
           RTD_WEBHOOK: ${{ secrets.RTD_WEBHOOK }}
-  

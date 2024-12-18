@@ -1,0 +1,60 @@
+name: test-results
+
+on:
+  workflow_run:
+    workflows: ["main"]
+    types:
+      - completed
+
+jobs:
+  publish-test-results:
+    runs-on: ubuntu-24.04
+    if: github.event.workflow_run.conclusion != 'skipped'
+    permissions:
+      checks: write
+      pull-requests: write
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          path: artifacts
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        id: test-results
+        with:
+          commit: ${{ github.event.workflow_run.head_sha }}
+          event_file: artifacts/event_file/event.json
+          event_name: ${{ github.event.workflow_run.event }}
+          files: "artifacts/**/*.xml"
+      - name: Set badge color
+        shell: bash
+        run: |
+          case ${{ fromJSON( steps.test-results.outputs.json ).conclusion }} in
+            success)
+              echo "BADGE_COLOR=31c653" >> $GITHUB_ENV
+              ;;
+            failure)
+              echo "BADGE_COLOR=800000" >> $GITHUB_ENV
+              ;;
+            neutral)
+              echo "BADGE_COLOR=696969" >> $GITHUB_ENV
+              ;;
+          esac
+      - name: Create badge
+        uses: emibcn/badge-action@v2
+        with:
+          label: Test
+          status: "${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests, ${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.runs }} runs: ${{ fromJSON( steps.test-results.outputs.json ).conclusion }}"
+          color: ${{ env.BADGE_COLOR }}
+          path: badge.svg
+      - name: Upload badge
+        # Upload only for main branch
+        if: >
+          github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
+          github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
+        uses: andymckay/append-gist-action@0.3
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gistURL: https://gist.githubusercontent.com/adferrand/dns-lexicon-tests-results-badge
+          file: badge.svg
