@@ -10,7 +10,7 @@ Manipulate DNS records on various DNS providers in a standardized/agnostic way.
     :alt: Lexicon
 .. |build_status| image:: https://img.shields.io/github/actions/workflow/status/dns-lexicon/dns-lexicon/main.yml
     :target: https://github.com/dns-lexicon/dns-lexicon/actions/workflows/main.yml
-.. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon
+.. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon?branch=main
     :target: https://coveralls.io/github/dns-lexicon/dns-lexicon?branch=main
 .. |docker_pulls| image:: https://img.shields.io/docker/pulls/analogj/lexicon
     :target: https://hub.docker.com/r/analogj/lexicon
