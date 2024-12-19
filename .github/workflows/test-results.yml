@@ -6,6 +6,10 @@ on:
     types:
       - completed
 
+concurrency:
+  group: test-results-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   publish-test-results:
     runs-on: ubuntu-24.04

@@ -131,7 +131,7 @@ or ``self._get_provider_option('auth_token')`` respectively.
 
 .. _Provider: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/interfaces.py
 .. _cloudflare.py: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/providers/cloudflare.py
-.. _provider conventions: https://dns-lexicon.readthedocs.io/en/latest/provider_conventions.html
+.. _provider conventions: https://dns-lexicon.github.io/dns-lexicon/provider_conventions.html
 
 Testing your provider
 =====================

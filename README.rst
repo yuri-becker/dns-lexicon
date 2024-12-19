@@ -211,8 +211,8 @@ Online documentation (user guide, configuration reference) is available in the `
 
 For a quick start, please have a look in particular at the `User guide`_.
 
-.. _Lexicon documentation: https://dns-lexicon.readthedocs.io
-.. _User guide: https://dns-lexicon.readthedocs.io/en/latest/user_guide.html
+.. _Lexicon documentation: https://dns-lexicon.github.io/dns-lexicon
+.. _User guide: https://dns-lexicon.github.io/dns-lexicon/user_guide.html
 
 Contributing
 ============
@@ -221,7 +221,7 @@ If you want to help in the Lexicon development, you are welcome!
 
 Please have a look at the `Developer guide`_ page to know how to start.
 
-.. _Developer guide: https://dns-lexicon.readthedocs.io/en/latest/developer_guide.html
+.. _Developer guide: https://dns-lexicon.github.io/dns-lexicon/developer_guide.html
 
 Licensing
 =========
