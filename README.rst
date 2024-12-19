@@ -18,7 +18,7 @@ Manipulate DNS records on various DNS providers in a standardized/agnostic way.
     :target: https://pypi.python.org/pypi/dns-lexicon
 .. |pypy_python_support| image:: https://img.shields.io/pypi/pyversions/dns-lexicon?style=flat-square
     :target: https://pypi.python.org/pypi/dns-lexicon
-.. |github_license| image:: https://img.shields.io/github/license/dns-lexicon/dns-lexicon?style=flat-square
+.. |github_license| image:: https://img.shields.io/github/license/dns-lexicon/dns-lexicon?style=flat-square&color=blueviolet
     :target: https://github.com/dns-lexicon/dns-lexicon/blob/master/LICENSE
 
 .. contents:: Table of Contents
