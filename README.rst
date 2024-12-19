@@ -4,19 +4,19 @@
 
 Manipulate DNS records on various DNS providers in a standardized/agnostic way.
 
-|build_status| |coverage_status| |docker_pulls| |pypy_version| |pypy_python_support| |github_license|
+|build_status| |tests_status| |coverage_status| |docker_pulls| |pypy_version| |github_license|
 
 .. |logo_named| image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg
     :alt: Lexicon
 .. |build_status| image:: https://img.shields.io/github/actions/workflow/status/dns-lexicon/dns-lexicon/main.yml?style=flat-square
     :target: https://github.com/dns-lexicon/dns-lexicon/actions/workflows/main.yml
+.. |tests_status| image:: https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fadferrand%2F5985ab4d62747586f12b0700a0107640%2Fraw%2Ftest_badge.json&style=flat-square
+    :target: https://github.com/dns-lexicon/dns-lexicon/actions/workflows/test-results.yml
 .. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon?branch=main&style=flat-square
     :target: https://coveralls.io/github/dns-lexicon/dns-lexicon?branch=main
 .. |docker_pulls| image:: https://img.shields.io/docker/pulls/analogj/lexicon?style=flat-square
     :target: https://hub.docker.com/r/analogj/lexicon
 .. |pypy_version| image:: https://img.shields.io/pypi/v/dns-lexicon?style=flat-square
-    :target: https://pypi.python.org/pypi/dns-lexicon
-.. |pypy_python_support| image:: https://img.shields.io/pypi/pyversions/dns-lexicon?style=flat-square
     :target: https://pypi.python.org/pypi/dns-lexicon
 .. |github_license| image:: https://img.shields.io/github/license/dns-lexicon/dns-lexicon?style=flat-square&color=blueviolet
     :target: https://github.com/dns-lexicon/dns-lexicon/blob/master/LICENSE
