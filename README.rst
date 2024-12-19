@@ -8,17 +8,17 @@ Manipulate DNS records on various DNS providers in a standardized/agnostic way.
 
 .. |logo_named| image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg
     :alt: Lexicon
-.. |build_status| image:: https://img.shields.io/github/actions/workflow/status/dns-lexicon/dns-lexicon/main.yml
+.. |build_status| image:: https://img.shields.io/github/actions/workflow/status/dns-lexicon/dns-lexicon/main.yml?style=flat-square
     :target: https://github.com/dns-lexicon/dns-lexicon/actions/workflows/main.yml
-.. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon?branch=main
+.. |coverage_status| image:: https://img.shields.io/coverallsCoverage/github/dns-lexicon/dns-lexicon?branch=main&style=flat-square
     :target: https://coveralls.io/github/dns-lexicon/dns-lexicon?branch=main
-.. |docker_pulls| image:: https://img.shields.io/docker/pulls/analogj/lexicon
+.. |docker_pulls| image:: https://img.shields.io/docker/pulls/analogj/lexicon?style=flat-square
     :target: https://hub.docker.com/r/analogj/lexicon
-.. |pypy_version| image:: https://img.shields.io/pypi/v/dns-lexicon
+.. |pypy_version| image:: https://img.shields.io/pypi/v/dns-lexicon?style=flat-square
     :target: https://pypi.python.org/pypi/dns-lexicon
-.. |pypy_python_support| image:: https://img.shields.io/pypi/pyversions/dns-lexicon
+.. |pypy_python_support| image:: https://img.shields.io/pypi/pyversions/dns-lexicon?style=flat-square
     :target: https://pypi.python.org/pypi/dns-lexicon
-.. |github_license| image:: https://img.shields.io/github/license/dns-lexicon/dns-lexicon
+.. |github_license| image:: https://img.shields.io/github/license/dns-lexicon/dns-lexicon?style=flat-square
     :target: https://github.com/dns-lexicon/dns-lexicon/blob/master/LICENSE
 
 .. contents:: Table of Contents
