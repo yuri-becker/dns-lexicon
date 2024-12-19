@@ -34,30 +34,25 @@ jobs:
         run: |
           case ${{ fromJSON( steps.test-results.outputs.json ).conclusion }} in
             success)
-              echo "BADGE_COLOR=31c653" >> $GITHUB_ENV
+              echo "BADGE_COLOR=#31c653" >> $GITHUB_ENV
               ;;
             failure)
-              echo "BADGE_COLOR=800000" >> $GITHUB_ENV
+              echo "BADGE_COLOR=#800000" >> $GITHUB_ENV
               ;;
             neutral)
-              echo "BADGE_COLOR=696969" >> $GITHUB_ENV
+              echo "BADGE_COLOR=#696969" >> $GITHUB_ENV
               ;;
           esac
       - name: Create badge
-        uses: emibcn/badge-action@v2
-        with:
-          label: Test
-          status: "${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests, ${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.runs }} runs: ${{ fromJSON( steps.test-results.outputs.json ).conclusion }}"
-          color: ${{ env.BADGE_COLOR }}
-          path: badge.svg
-      - name: Upload badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
         # Upload only for main branch
         if: >
           github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main' ||
           github.event_name != 'workflow_run' && github.ref == 'refs/heads/main'
-        uses: exuanbo/actions-deploy-gist@v1
         with:
-          token: ${{ secrets.GIST_TOKEN }}
-          gist_id: 5985ab4d62747586f12b0700a0107640
-          file_path: badge.svg
-          file_type: binary
+          auth: ${{ secrets.GIST_TOKEN }}
+          gistID: 5985ab4d62747586f12b0700a0107640
+          filename: test_badge.json
+          label: test
+          message: "${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests, ${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.runs }} runs: ${{ fromJSON( steps.test-results.outputs.json ).conclusion }}"
+          color: ${{ env.BADGE_COLOR }}
