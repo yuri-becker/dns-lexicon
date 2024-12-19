@@ -34,13 +34,13 @@ jobs:
         run: |
           case ${{ fromJSON( steps.test-results.outputs.json ).conclusion }} in
             success)
-              echo "BADGE_COLOR=#31c653" >> $GITHUB_ENV
+              echo "BADGE_COLOR=green" >> $GITHUB_ENV
               ;;
             failure)
-              echo "BADGE_COLOR=#800000" >> $GITHUB_ENV
+              echo "BADGE_COLOR=darkred" >> $GITHUB_ENV
               ;;
             neutral)
-              echo "BADGE_COLOR=#696969" >> $GITHUB_ENV
+              echo "BADGE_COLOR=slategray" >> $GITHUB_ENV
               ;;
           esac
       - name: Create badge
@@ -54,5 +54,5 @@ jobs:
           gistID: 5985ab4d62747586f12b0700a0107640
           filename: test_badge.json
           label: test
-          message: "${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests, ${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.runs }} runs: ${{ fromJSON( steps.test-results.outputs.json ).conclusion }}"
+          message: "${{ fromJSON( steps.test-results.outputs.json ).formatted.stats.tests }} tests: ${{ fromJSON( steps.test-results.outputs.json ).conclusion }}"
           color: ${{ env.BADGE_COLOR }}
