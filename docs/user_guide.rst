@@ -50,11 +50,15 @@ and with Route 53 provider dependencies:
 Using Docker
 ~~~~~~~~~~~~
 
-Lexicon is prepackaged as a Docker image available in the Github Container Registry. The name of the image is `ghcr.io/dns-lexicon/dns-lexicon`.
+Lexicon is prepackaged as a Docker image available in the Github Container Registry. The name of the image is ``ghcr.io/dns-lexicon/dns-lexicon``.
 
-You can either use the latest version available, or pin to a specific version (eg. `ghcr.io/dns-lexicon/dns-lexicon:v3.20.0` to use version `3.20.0`).
+You can either use the latest version available, or pin to a specific version (eg. ``ghcr.io/dns-lexicon/dns-lexicon:3.20.1`` to use version ``3.20.1``).
 
 Lexicon CLI flags can be passed directly to the Docker image to execute Lexicon:
+
+.. code-block:: bash
+
+    $ docker run --rm ghcr.io/dns-lexicon/dns-lexicon --help
 
 Using your OS package manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
