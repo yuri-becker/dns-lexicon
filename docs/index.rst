@@ -16,3 +16,4 @@
    configuration_reference
    developer_guide
    provider_conventions
+   changelog

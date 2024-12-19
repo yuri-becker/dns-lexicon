@@ -11,6 +11,7 @@ version = release = metadata["version"]
 
 extensions = [
     "sphinx_rtd_theme",
+    "sphinx_mdinclude",
 ]
 
 html_theme = "sphinx_rtd_theme"
