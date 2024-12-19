@@ -1,6 +1,8 @@
 # Changelog
 
 ## master - CURRENT
+
+## 3.20.1 - 19/12/2024
 ### Modified
 * Setup Docker entrypoint to run Lexicon by default
 
