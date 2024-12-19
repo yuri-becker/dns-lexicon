@@ -30,8 +30,6 @@ def main() -> None:
 Providers available
 -------------------
 
-The following Lexicon providers are available:
-
 .. include:: ../README.rst
     :start-after: tag: providers-table-begin
     :end-before: tag: providers-table-end
@@ -79,6 +77,8 @@ def _generate_table(providers: List[str]) -> None:
 
     readme_lines = (
         readme_lines[: begin_idx + 1]
+        + ["\n"]
+        + [f"Lexicon currently supports {len(providers)} providers:\n"]
         + ["\n"]
         + [f"{item}\n" for item in table]
         + ["\n"]

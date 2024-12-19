@@ -34,7 +34,7 @@ jobs:
         run: |
           case ${{ fromJSON( steps.test-results.outputs.json ).conclusion }} in
             success)
-              echo "BADGE_COLOR=green" >> $GITHUB_ENV
+              echo "BADGE_COLOR=seagreen" >> $GITHUB_ENV
               ;;
             failure)
               echo "BADGE_COLOR=darkred" >> $GITHUB_ENV
