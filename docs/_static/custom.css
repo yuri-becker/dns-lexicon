@@ -1,0 +1,8 @@
+:root[data-mode=light] .only-dark {
+    display: none;
+}
+
+:root[data-mode=dark] .only-light,
+:root[data-mode=darker] .only-light {
+    display: none;
+}

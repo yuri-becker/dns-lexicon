@@ -20,7 +20,13 @@ extensions = [
 ]
 
 html_theme = "piccolo_theme"
-
 html_theme_options = {
     "source_url": 'https://github.com/dns-lexicon/dns-lexicon/'
 }
+
+html_static_path = [
+    "_static",
+]
+html_css_files = [
+    "custom.css",
+]
