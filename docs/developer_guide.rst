@@ -93,8 +93,8 @@ HTTP requests to the provider API:
 
   - ``_request``
 
-You should review the `provider conventions`_ to ensure that ``_authenticate`` and ``*_record(s)``
-methods follow the proper behavior and API contracts.
+You should review the "Provider conventions" section of the `technical workbook`_ to ensure
+that ``_authenticate`` and ``*_record(s)`` methods follow the proper behavior and API contracts.
 
 The static method ``get_nameservers`` returns the list of FQDNs of the nameservers used by
 the DNS provider. For instance, Google Cloud DNS uses nameservers that have the FQDN pattern
@@ -123,15 +123,13 @@ or ``self._get_provider_option('auth_token')`` respectively.
 
         [project.optional-dependencies]
         mycustomprovider = ["additionalpackage >= 1"]
-        ...
         full = [
-            ...,
             "additionalpackage >= 1",
         ]
 
 .. _Provider: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/interfaces.py
 .. _cloudflare.py: https://github.com/dns-lexicon/dns-lexicon/blob/main/src/lexicon/providers/cloudflare.py
-.. _provider conventions: https://dns-lexicon.github.io/dns-lexicon/provider_conventions.html
+.. _technical workbook: ./technical_workbook.html
 
 Testing your provider
 =====================

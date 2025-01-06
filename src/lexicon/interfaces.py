@@ -37,7 +37,7 @@ class Provider(ABC):
     ...
 
     :param config: is a ConfigResolver object that contains all the options
-    for this provider, merged from CLI and Env variables.
+                   for this provider, merged from CLI and Env variables.
     """
 
     def __init__(self, config: ConfigResolver | dict[str, Any]):

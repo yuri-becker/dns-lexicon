@@ -2,6 +2,11 @@ from os.path import abspath, dirname, join
 
 import tomllib
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path('..', 'src').resolve()))
+
 with open(join(dirname(dirname(abspath(__file__))), "pyproject.toml"), "rb") as file_h:
     metadata = tomllib.load(file_h)["project"]
 
@@ -10,8 +15,12 @@ project = "DNS-Lexicon"
 version = release = metadata["version"]
 
 extensions = [
-    "sphinx_rtd_theme",
     "sphinx_mdinclude",
+    "sphinx.ext.autodoc",
 ]
 
-html_theme = "sphinx_rtd_theme"
+html_theme = "piccolo_theme"
+
+html_theme_options = {
+    "source_url": 'https://github.com/dns-lexicon/dns-lexicon/'
+}

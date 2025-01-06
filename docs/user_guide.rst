@@ -6,7 +6,7 @@ Installation
 ============
 
 Using pip
-~~~~~~~~~
+---------
 
 .. warning::
 
@@ -48,7 +48,7 @@ and with Route 53 provider dependencies:
     $ pip install git+https://github.com/dns-lexicon/dns-lexicon.git#egg=dns-lexicon[route53]
 
 Using Docker
-~~~~~~~~~~~~
+------------
 
 Lexicon is prepackaged as a Docker image available in the Github Container Registry. The name of the image is ``ghcr.io/dns-lexicon/dns-lexicon``.
 
@@ -61,7 +61,7 @@ Lexicon CLI flags can be passed directly to the Docker image to execute Lexicon:
     $ docker run --rm ghcr.io/dns-lexicon/dns-lexicon --help
 
 Using your OS package manager
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Lexicon is available in various Linux distributions. Please search for `lexicon` or `dns-lexicon` package in https://pkgs.org.
 

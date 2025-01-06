@@ -15,5 +15,5 @@
    user_guide
    configuration_reference
    developer_guide
-   provider_conventions
+   technical_workbook
    changelog
