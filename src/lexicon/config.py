@@ -184,14 +184,14 @@ class ConfigResolver(object):
     A configuration parameter can be retrieved using the ``resolve()`` method. The configuration
     parameter key needs to conform to a namespace, whose delimeters is ``:``. Two namespaces will
     be used in the context of Lexicon:
-    
+
     * the parameters relevant for Lexicon itself: ``lexicon:global_parameter``
     * the parameters specific to a DNS provider: ``lexicon:cloudflare:cloudflare_parameter``
 
     Example:
-    
+
     .. code-block:: python
-    
+
         # This will resolve configuration parameters from environment variables,
         # then from a configuration file named ``/my/path/to/lexicon.yml``.
         from lexicon.config import ConfigResolver
@@ -220,7 +220,7 @@ class ConfigResolver(object):
         """
         Resolve the value of the given config parameter key. Key must be correctly scoped for
         Lexicon, and optionally for the DNS provider for which the parameter is consumed.
-        
+
         For instance:
             * ``config.resolve('lexicon:delegated')`` will get the delegated parameter for Lexicon
             * ``config.resolve('lexicon:cloudflare:auth_token')`` will get the auth_token parameter
@@ -279,11 +279,11 @@ class ConfigResolver(object):
     def with_dict(self, dict_object: dict[str, Any]) -> ConfigResolver:
         """
         Configure current resolver to use the given dict object, scoped to lexicon namespace.
-        
+
         Example of valid dict object for lexicon, defining properties ``lexicon:delegated`` and ``lexicon:cloudflare:auth_token``
-        
+
         .. code-block:: json
-        
+
             {
                 "delegated": "onedelegated",
                 "cloudflare": {
@@ -301,9 +301,9 @@ class ConfigResolver(object):
         This file provides configuration parameters for Lexicon and any DNS provider.
 
         Typical format is:
-        
+
         .. code-block:: bash
-        
+
             $ cat lexicon.yml
             # Will define properties 'lexicon:delegated' and 'lexicon:cloudflare:auth_token'
             delegated: 'onedelegated'
@@ -322,7 +322,7 @@ class ConfigResolver(object):
         This file provides configuration parameters for a DNS provider exclusively.
 
         Typical format is:
-        
+
         .. code-block:: bash
 
             $ cat lexicon_cloudflare.yml
@@ -341,15 +341,15 @@ class ConfigResolver(object):
         Configure current resolver to use every valid YAML configuration files available in the
         given directory path. To be taken into account, a configuration file must conform to the
         following naming convention:
-        
+
         * ``lexicon.yml`` for a global Lexicon config file (see ``with_config_file`` doc)
         * ``lexicon_[provider].yml`` for a DNS provider specific configuration file, with ``[provider]``
             equals to the DNS provider name (see ``with_provider_config_file`` doc)
 
         Example:
-        
+
         .. code-block:: bash
-        
+
             $ ls /etc/lexicon
             lexicon.yml # global Lexicon configuration file
             lexicon_cloudflare.yml # specific configuration file for clouflare DNS provder
