@@ -11,10 +11,6 @@ div.document {
     margin-left: 10rem;
 }
 
-div.document div.documentwrapper {
-    max-width: 60rem;
-}
-
 div#right_sidebar {
     width: 20rem;
 }
