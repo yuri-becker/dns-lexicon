@@ -6,3 +6,12 @@
 :root[data-mode=darker] .only-light {
     display: none;
 }
+
+div.document {
+    margin-left: 10rem;
+    max-width: 60rem;
+}
+
+div#right_sidebar {
+    width: 20rem;
+}
