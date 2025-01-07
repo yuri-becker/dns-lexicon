@@ -11,7 +11,7 @@ div.document {
     margin-left: 10rem;
 }
 
-div.documentwrapper {
+div.document div.documentwrapper {
     max-width: 60rem;
 }
 
