@@ -9,6 +9,9 @@
 
 div.document {
     margin-left: 10rem;
+}
+
+div.documentwrapper {
     max-width: 60rem;
 }
 
