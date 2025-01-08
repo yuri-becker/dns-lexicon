@@ -1,12 +1,10 @@
 .. raw:: html
 
-    <h1>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named_white.svg">
-            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg.svg">
-            <img alt="Lexicon" src="">
-        </picture>
-    </h1>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named_white.svg">
+        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg.svg">
+        <img alt="Lexicon" src="">
+    </picture>
 
 Manipulate DNS records on various DNS providers in a standardized/agnostic way.
 
