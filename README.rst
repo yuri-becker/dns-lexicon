@@ -2,7 +2,7 @@
 
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named_white.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg.svg">
+        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg">
         <img alt="Lexicon" src="">
     </picture>
 
