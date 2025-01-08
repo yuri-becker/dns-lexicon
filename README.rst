@@ -1,13 +1,17 @@
-============
-|logo_named|
-============
+.. raw:: html
+
+    <h1>
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named_white.svg">
+            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg.svg">
+            <img alt="Lexicon" src="">
+        </picture>
+    </h1>
 
 Manipulate DNS records on various DNS providers in a standardized/agnostic way.
 
 |build_status| |tests_status| |coverage_status| |docker_pulls| |pypy_version| |github_license|
 
-.. |logo_named| image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg
-    :alt: Lexicon
 .. |build_status| image:: https://img.shields.io/github/actions/workflow/status/dns-lexicon/dns-lexicon/main.yml?style=flat-square
     :target: https://github.com/dns-lexicon/dns-lexicon/actions/workflows/main.yml
 .. |tests_status| image:: https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fadferrand%2F5985ab4d62747586f12b0700a0107640%2Fraw%2Ftest_badge.json&style=flat-square
