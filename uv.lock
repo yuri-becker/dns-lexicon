@@ -487,7 +487,6 @@ doc = [
     { name = "piccolo-theme" },
     { name = "sphinx" },
     { name = "sphinx-mdinclude" },
-    { name = "toml" },
 ]
 
 [package.metadata]
@@ -536,7 +535,6 @@ doc = [
     { name = "piccolo-theme" },
     { name = "sphinx" },
     { name = "sphinx-mdinclude" },
-    { name = "toml" },
 ]
 
 [[package]]
