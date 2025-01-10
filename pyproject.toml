@@ -81,7 +81,6 @@ dev = [
 doc = [
     "sphinx",
     "sphinx-mdinclude",
-    "sphinx_rtd_theme",
     "piccolo-theme",
     "toml",
 ]
