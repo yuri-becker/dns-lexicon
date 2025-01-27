@@ -9,14 +9,17 @@ from integration_tests import IntegrationTestsV2
 # Hook into testing framework by inheriting unittest.TestCase and reuse
 # the tests which *each and every* implementation of the interface must
 # pass, by inheritance from integration_tests.IntegrationTests
-class PowerdnsProviderTests(TestCase, IntegrationTestsV2):
+class DevNomadsProviderTests(TestCase, IntegrationTestsV2):
     """TestCase for DevNomads"""
 
     provider_name = "devnomads"
-    domain = "example.com"
+    domain = "example.nl"
 
     def _filter_headers(self):
         return ["Authorization"]
 
-    def _filter_post_data_parameters(self):
-        return ["bearer_token"]
+    @pytest.mark.skip(reason="new test, missing recording")
+    def test_provider_when_calling_update_record_should_modify_record_name_specified(
+        self,
+    ):
+        return

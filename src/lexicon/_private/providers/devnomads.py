@@ -7,7 +7,7 @@ API Docs: https://api.devnomads.nl/api/documentation#/Dns
 
 Implementation notes:
 The DevNomads API basically implements the PowerDNS API but applies client
-specific authentication and filtering. For docs and usage, see PowerDNS.
+specific authentication and filtering.
 """
 
 import json
@@ -35,7 +35,7 @@ class Provider(BaseProvider):
 
     @staticmethod
     def configure_parser(parser: ArgumentParser) -> None:
-        parser.add_argument("--bearer-token", help="Bearer token.")
+        parser.add_argument("--auth-token", help="Auth token.")
 
     def __init__(self, config):
         super(Provider, self).__init__(config)
@@ -45,8 +45,8 @@ class Provider(BaseProvider):
         if self.api_endpoint.endswith("/"):
             self.api_endpoint = self.api_endpoint[:-1]
 
-        self.bearer_token = self._get_provider_option("bearer_token")
-        if not self.bearer_token:
+        self.auth_token = self._get_provider_option("auth_token")
+        if not self.auth_token:
             raise DevNomadsProviderError(
                 "DevNomads auth token not defined (auth_token)"
             )
@@ -216,7 +216,7 @@ class Provider(BaseProvider):
             params=query_params,
             data=json.dumps(data),
             headers={
-                "Authorization": f"Bearer {self.bearer_token}",
+                "Authorization": f"Bearer {self.auth_token}",
                 "Content-Type": "application/json",
             },
         )
