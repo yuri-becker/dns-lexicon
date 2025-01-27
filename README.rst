@@ -76,7 +76,7 @@ Only DNS providers who have an API can be supported by `lexicon`.
 
 .. tag: providers-table-begin
 
-Lexicon currently supports 87 providers:
+Lexicon currently supports 88 providers:
 
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 | aliyun_         | arvancloud_     | aurora_         | azure_          | cloudflare_     |
