@@ -1,4 +1,4 @@
-"""Integration tests for PowerDNS"""
+"""Integration tests for DevNomads"""
 
 from unittest import TestCase
 
