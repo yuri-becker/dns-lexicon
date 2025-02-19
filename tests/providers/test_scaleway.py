@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from integration_tests import IntegrationTestsV2, vcr_integration_test
 
+
 class ScalewayProviderTests(TestCase, IntegrationTestsV2):
     """Integration tests for Scaleway provider"""
 

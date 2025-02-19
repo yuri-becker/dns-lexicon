@@ -13,6 +13,7 @@ from typing import List
 
 from lexicon.interfaces import Provider as BaseProvider
 
+
 class Provider(BaseProvider):
     """
     Provide Scaleway Domains and DNS API Implementation for lexicon.
@@ -27,7 +28,6 @@ class Provider(BaseProvider):
         parser.add_argument(
             "--secret-key", help="specify Scaleway API key",
         )
-
 
     def __init__(self, config):
         super(Provider, self).__init__(config)
@@ -109,7 +109,7 @@ class Provider(BaseProvider):
         else:
             records = self.list_records(rtype, name, content)
             if not records:
-                return True 
+                return True
             for record in records:
                 changes.append({
                     "delete": {
@@ -150,7 +150,6 @@ class Provider(BaseProvider):
         print(patch)
         self._patch(self._records_url(), patch)
         return True
-
 
     def _request(self, action="GET", url="/", data=None, query_params=None):
         headers = {
