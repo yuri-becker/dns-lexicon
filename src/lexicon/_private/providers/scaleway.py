@@ -26,7 +26,7 @@ class Provider(BaseProvider):
     @staticmethod
     def configure_parser(parser: ArgumentParser) -> None:
         parser.add_argument(
-            "--secret-key", help="specify Scaleway API key",
+            "--auth-secret-key", help="specify Scaleway API key",
         )
 
     def __init__(self, config):
@@ -155,7 +155,7 @@ class Provider(BaseProvider):
         headers = {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "X-Auth-Token": self._get_provider_option("secret_key"),
+            "X-Auth-Token": self._get_provider_option("auth_secret_key"),
         }
         response = requests.request(
             action,
