@@ -21,7 +21,7 @@ class Provider(BaseProvider):
 
     @staticmethod
     def get_nameservers() -> List[str]:
-        return ["dom.scw.cloud"]
+        return ["scw.cloud"]
 
     @staticmethod
     def configure_parser(parser: ArgumentParser) -> None:
