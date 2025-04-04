@@ -209,14 +209,24 @@ class Provider(BaseProvider):
             data = {}
         if query_params is None:
             query_params = {}
-        response = requests.request(
-            action,
-            self.api_endpoint + url,
-            params=query_params,
-            data=json.dumps(data),
-            cookies=self.cookies,
-            headers={"Content-Type": "application/json"},
-        )
+
+        if not data:
+            response = requests.request(
+                action,
+                self.api_endpoint + url,
+                params=query_params,
+                cookies=self.cookies,
+                headers={"Content-Type": "application/json"},
+            )
+        else:
+            response = requests.request(
+                action,
+                self.api_endpoint + url,
+                params=query_params,
+                data=json.dumps(data),
+                cookies=self.cookies,
+                headers={"Content-Type": "application/json"},
+            )
 
         # if the request fails for any reason, throw an error.
         response.raise_for_status()
