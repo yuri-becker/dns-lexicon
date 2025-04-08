@@ -6,10 +6,10 @@ https://www.scaleway.com/en/developers/api/
 """
 
 import json
+import requests
+
 from argparse import ArgumentParser
 from typing import List
-
-import requests
 
 from lexicon.interfaces import Provider as BaseProvider
 
@@ -26,8 +26,7 @@ class Provider(BaseProvider):
     @staticmethod
     def configure_parser(parser: ArgumentParser) -> None:
         parser.add_argument(
-            "--auth-secret-key",
-            help="specify Scaleway API key",
+            "--auth-secret-key", help="specify Scaleway API key",
         )
 
     def __init__(self, config):
@@ -52,8 +51,7 @@ class Provider(BaseProvider):
                                 "name": name,
                                 "data": content,
                                 "type": rtype,
-                                "ttl": self._get_lexicon_option("ttl")
-                                or self.default_ttl,
+                                "ttl": self._get_lexicon_option("ttl") or self.default_ttl,
                             },
                         ],
                     },
@@ -81,10 +79,8 @@ class Provider(BaseProvider):
     def _decode_content(rtype, data):
         if not data or rtype != "TXT":
             return data
-        if data[0] == '"' and data[len(data) - 1] == '"':
-            return (
-                data[1:-1].replace('" "', "").replace('\\"', '"').replace("\\\\", "\\")
-            )
+        if data[0] == '"' and data[len(data)-1] == '"':
+            return data[1:-1].replace('" "', "").replace('\\"', '"').replace("\\\\", "\\")
         return data
 
     def _filter_records(self, records, rtype=None, name=None, content=None):
@@ -105,25 +101,21 @@ class Provider(BaseProvider):
     def delete_record(self, identifier=None, rtype=None, name=None, content=None):
         changes = []
         if identifier:
-            changes.append(
-                {
-                    "delete": {
-                        "id": identifier,
-                    },
-                }
-            )
+            changes.append({
+                "delete": {
+                    "id": identifier,
+                },
+            })
         else:
             records = self.list_records(rtype, name, content)
             if not records:
                 return True
             for record in records:
-                changes.append(
-                    {
-                        "delete": {
-                            "id": record["id"],
-                        },
-                    }
-                )
+                changes.append({
+                    "delete": {
+                        "id": record["id"],
+                    },
+                })
         patch = {
             "changes": changes,
         }
@@ -148,8 +140,7 @@ class Provider(BaseProvider):
                                 "name": name,
                                 "data": content,
                                 "type": rtype,
-                                "ttl": self._get_lexicon_option("ttl")
-                                or self.default_ttl,
+                                "ttl": self._get_lexicon_option("ttl") or self.default_ttl,
                             },
                         ],
                     },

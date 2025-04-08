@@ -1,8 +1,6 @@
 # Changelog
 
 ## master - CURRENT
-
-## 3.21.0 - 08/04/2025
 ### Added
 * Add `devnomads` provider (#19)
 * Add `scaleway` provider (#21)

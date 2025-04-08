@@ -1,5 +1,4 @@
 """Integration tests for the Scaleway API provider"""
-
 from unittest import TestCase
 
 from integration_tests import IntegrationTestsV2, vcr_integration_test
@@ -8,11 +7,11 @@ from integration_tests import IntegrationTestsV2, vcr_integration_test
 class ScalewayProviderTests(TestCase, IntegrationTestsV2):
     """Integration tests for Scaleway provider"""
 
-    provider_name = "scaleway"
-    domain = "example.com"
+    provider_name = 'scaleway'
+    domain = 'example.com'
 
     def _filter_headers(self):
-        return ["X-Auth-Token"]
+        return ['X-Auth-Token']
 
     @vcr_integration_test
     def test_provider_when_calling_list_records_should_return_empty_list_if_no_records_found(
