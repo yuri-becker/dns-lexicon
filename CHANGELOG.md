@@ -1,6 +1,8 @@
 # Changelog
 
 ## master - CURRENT
+# Removed
+* Remove `webgo` provider (#20)
 
 ## 3.20.1 - 19/12/2024
 ### Modified
@@ -12,26 +14,26 @@
 
 ## 3.19.0 - 06/12/2024
 ### Added
-* Add `regfish` provider (#2102)
-* Add `ionos` provider (#2127)
+* Add `regfish` provider (analogj/lexicon#2102)
+* Add `ionos` provider (analogj/lexicon#2127)
 * Add support of Python 3.13
 
 ### Modified 
 * Migrate build tooling from poetry to uv
-* Provider `porkbun` now use the new API exposed by the DNS provider (#2069)
+* Provider `porkbun` now use the new API exposed by the DNS provider (analogj/lexicon#2069)
 
 ### Removed
 * Drop support of Python 3.8
 
 ## 3.18.0 - 22/08/2024
 ### Added
-* Add `timeweb` provider (#1850)
-* Add `qcloud` provider (#1824)
+* Add `timeweb` provider (analogj/lexicon#1850)
+* Add `qcloud` provider (analogj/lexicon#1824)
 
 ### Modified
-* Update cloudflare documentation regarding the zoneID (#1783)
-* Add support of personal access tokens (PATs) in `gandi` provider (#1987)
-* Prevent invalid TTL values and proper behavior with subdomains in `godaddy` provider (#1834)
+* Update cloudflare documentation regarding the zoneID (analogj/lexicon#1783)
+* Add support of personal access tokens (PATs) in `gandi` provider (analogj/lexicon#1987)
+* Prevent invalid TTL values and proper behavior with subdomains in `godaddy` provider (analogj/lexicon#1834)
 
 ## 3.17.0 - 06/11/2023
 ### Added
@@ -128,87 +130,87 @@
 
 ## 3.13.0 - 07/08/2023
 ### Added
-* Add `wedos` provider (#1675)
+* Add `wedos` provider (analogj/lexicon#1675)
 
 ### Modified
-* Proper handling off authentication errors on `easydns` provider (#1674)
-* Allow management of pending (non-active) domains in `cloudflare` provider (#1659)
+* Proper handling off authentication errors on `easydns` provider (analogj/lexicon#1674)
+* Allow management of pending (non-active) domains in `cloudflare` provider (analogj/lexicon#1659)
 
 ## 3.12.0 - 11/06/2023
 ### Added
-* Add `duckdns` provider (experimental support) (#1533)
-* Add `dnsservices` provider (#1603)
-* Add `flexibleengine` provider (#1600)
+* Add `duckdns` provider (experimental support) (analogj/lexicon#1533)
+* Add `dnsservices` provider (analogj/lexicon#1603)
+* Add `flexibleengine` provider (analogj/lexicon#1600)
 * Official support for Python 3.11
 
 ### Modified
-* Upgrade API version used for `azure` provider (#1606)
-* Various fixes for documentation (#1488 #1458 #1601 #1605)
-* Fix check for extra dependencies (#1568)
+* Upgrade API version used for `azure` provider (analogj/lexicon#1606)
+* Various fixes for documentation (analogj/lexicon#1488 analogj/lexicon#1458 analogj/lexicon#1601 analogj/lexicon#1605)
+* Fix check for extra dependencies (analogj/lexicon#1568)
 
 ## 3.11.7 - 26/10/2022
 ### Modified
-* Fix `easyname` provider (update action) (#1442)
+* Fix `easyname` provider (update action) (analogj/lexicon#1442)
 
 ## 3.11.6 - 11/10/2022
 ### Modified
-* Fix `hetzner` provider with large list of entries (#1389)
+* Fix `hetzner` provider with large list of entries (analogj/lexicon#1389)
 
 ## 3.11.5 - 10/10/2022
 ### Modified
-* Fix upsertRecordSet in `yandex` provider (#1423)
+* Fix upsertRecordSet in `yandex` provider (analogj/lexicon#1423)
 
 ## 3.11.4 - 11/08/2022
 ### Modified
-* Better management of domain zone id in `yandex` provider (#1338)
-* Fix create record action on `glesys` provider (#1356)
-* Fix create multiple TXT records for the same name in `azure` provider (#1359)
+* Better management of domain zone id in `yandex` provider (analogj/lexicon#1338)
+* Fix create record action on `glesys` provider (analogj/lexicon#1356)
+* Fix create multiple TXT records for the same name in `azure` provider (analogj/lexicon#1359)
 
 ## 3.11.3 - 21/06/2022
 ### Added
-* Add `porkbun` provider (#1283)
+* Add `porkbun` provider (analogj/lexicon#1283)
 
 ## 3.11.2 - 16/05/2022
 ### Changed
-* Add support of record update without an identifier in `yandex` provider (#1253)
+* Add support of record update without an identifier in `yandex` provider (analogj/lexicon#1253)
 
 ## 3.11.1 - 15/05/2022
 ### Modified
-* Improve the Oracle Cloud DNS (`oci`) provider on the authentication mechanism (#1251)
-* Add API documentation to Oracle Cloud DNS (#1247)
+* Improve the Oracle Cloud DNS (`oci`) provider on the authentication mechanism (analogj/lexicon#1251)
+* Add API documentation to Oracle Cloud DNS (analogj/lexicon#1247)
 
 ## 3.11.0 - 06/05/2022
 ### Added
-* Add `namecom` provider (#1212)
+* Add `namecom` provider (analogj/lexicon#1212)
 
 ### Modified
-* Fix TLD with two parts for `namecheap` provider (#1237)
-* Fix `entity__name` parsing in `easyname` provider (#1230)
+* Fix TLD with two parts for `namecheap` provider (analogj/lexicon#1237)
+* Fix `entity__name` parsing in `easyname` provider (analogj/lexicon#1230)
 
 ## 3.10.0 - 01/05/2022
 ### Added
 * Add `--zone-id` CLI flag for `route53` provider
-* Add `yandexcloud` provider dedicated to Yandex Cloud solution (#1213)
+* Add `yandexcloud` provider dedicated to Yandex Cloud solution (analogj/lexicon#1213)
 
 ### Modified
 * Improve documentation with auto-generation
-* Clarify that `yandex` provider supports Yandex PDD only (#1211)
+* Clarify that `yandex` provider supports Yandex PDD only (analogj/lexicon#1211)
 * Use UUIDs in `aliyun` provider to avoid nonce collisions
 
 ## 3.9.5 - 18/04/2022
 ### Added
-* Add `misaka` provider (#1205 #556)
+* Add `misaka` provider (analogj/lexicon#1205 analogj/lexicon#556)
 
 ### Modified
-* Fix `yandex` provider for MX/SRV records (#1201)
-* Fix `joker` provider by using POST requests instead of GET (#1201)
+* Fix `yandex` provider for MX/SRV records (analogj/lexicon#1201)
+* Fix `joker` provider by using POST requests instead of GET (analogj/lexicon#1201)
 
 ## 3.9.4 - 14/02/2022
 ### Added
-* Add `webgo` provider (#1102)
+* Add `webgo` provider (analogj/lexicon#1102)
 
 ### Modified
-* Extend possible record types list for `dreamhost` provider (#1110)
+* Extend possible record types list for `dreamhost` provider (analogj/lexicon#1110)
 
 ## 3.9.3 - 27/01/2022
 ### Modified
@@ -232,23 +234,23 @@
 
 ## 3.8.4 - 28/12/2021
 ### Added
-* Add the Value Domain provider (#1018)
+* Add the Value Domain provider (analogj/lexicon#1018)
 
 ### Modified
 * Fix issue on the GoDaddy provider for update actions
 
 ## 3.8.3 - 12/11/2021
 ### Modified
-* Fix `plesk` provider (#1004)
-* Update nameservers in `namecheap` provider (#911)
+* Fix `plesk` provider (analogj/lexicon#1004)
+* Update nameservers in `namecheap` provider (analogj/lexicon#911)
 
 ## 3.8.2 - 03/11/2021
 ### Modified
-* Fix `dreamhost` provider since deprecated API endpoints are removed (#998)
+* Fix `dreamhost` provider since deprecated API endpoints are removed (analogj/lexicon#998)
 
 ## 3.8.1 - 15/10/2021
 ### Modified
-* Fix `rackspace` provider by not sending a body request for `GET` requests (#989)
+* Fix `rackspace` provider by not sending a body request for `GET` requests (analogj/lexicon#989)
 
 ## 3.8.0 - 04/10/2021
 ### Modified
@@ -267,16 +269,16 @@
 ## 3.7.0 - 09/08/2021
 ### Added
 * Add the Vercel provider (formerly known as Zeit)
-* Add the Oracle Cloud Infrastructure (OCI) DNS provider (#860)
+* Add the Oracle Cloud Infrastructure (OCI) DNS provider (analogj/lexicon#860)
 
 ### Modified
 * Keep old Zeit provider for compatibility purpose with deprecation notices
-* Support multiple domain statuses for Joker provider (#880)
+* Support multiple domain statuses for Joker provider (analogj/lexicon#880)
 
 ## 3.6.1 - 27/06/2021
 ### Modified
 * Support deprecated `method_whitelist` parameter in urllib3.util.retry.Retry for urllib3<1.26
-* Fix support of registered domains for INWX provider (#828)
+* Fix support of registered domains for INWX provider (analogj/lexicon#828)
 * Update `mypy` and use external types modules
 
 ## 3.6.0 - 02/05/2021
@@ -300,27 +302,27 @@
 
 ## 3.5.6 - 28/03/2021
 ### Modified
-* Migrate Vultr provider to the V2 API (#770)
+* Migrate Vultr provider to the V2 API (analogj/lexicon#770)
 
 ## 3.5.5 - 20/03/2021
 ### Added
-* Add the Mythic Beasts provider (#739)
-* Add the Infomaniak provider (#685 #762)
+* Add the Mythic Beasts provider (analogj/lexicon#739)
+* Add the Infomaniak provider (analogj/lexicon#685 analogj/lexicon#762)
 
 ### Changed
-* Improve dev tooling (#761)
+* Improve dev tooling (analogj/lexicon#761)
 
 ## 3.5.4 - 17/03/2021
 ### Changed
 * Support both `tldextract` 2.x and 3.x
 * Upgrade third-party dependencies
-* Validate PowerDNS provider parameters (#755)
-* Support dnspython>=2.1 for `localzone` provider (#760)
-* Update Mythic Beasts documentation (#693)
+* Validate PowerDNS provider parameters (analogj/lexicon#755)
+* Support dnspython>=2.1 for `localzone` provider (analogj/lexicon#760)
+* Update Mythic Beasts documentation (analogj/lexicon#693)
 * Fix documentation build and publication
 
 ### Deleted
-* Remove `mock` and `nose` dependencies (#706)
+* Remove `mock` and `nose` dependencies (analogj/lexicon#706)
 
 ## 3.5.3 - 02/01/2021
 ### Modified
@@ -346,13 +348,13 @@
 
 ## 3.4.5 - 02/11/2020
 ### Added
-* Add pagination support to Google Cloud DNS provider (#577)
+* Add pagination support to Google Cloud DNS provider (analogj/lexicon#577)
 * Add official support to Python 3.9
-* Add SSHFP record support to CloudFlare provider (library only) (#612)
+* Add SSHFP record support to CloudFlare provider (library only) (analogj/lexicon#612)
 
 ### Modified
-* Fix create/update operations when CAA records are presents in GoDaddy provider (#545)
-* Fix Hover provider with new authentication URL (#618)
+* Fix create/update operations when CAA records are presents in GoDaddy provider (analogj/lexicon#545)
+* Fix Hover provider with new authentication URL (analogj/lexicon#618)
 
 ## 3.4.4 - 25/10/2020
 ### Modified

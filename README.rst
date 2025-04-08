@@ -76,7 +76,7 @@ Only DNS providers who have an API can be supported by `lexicon`.
 
 .. tag: providers-table-begin
 
-Lexicon currently supports 87 providers:
+Lexicon currently supports 86 providers:
 
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 | aliyun_         | arvancloud_     | aurora_         | azure_          | cloudflare_     |
@@ -111,9 +111,9 @@ Lexicon currently supports 87 providers:
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 | transip_        | ultradns_       | valuedomain_    | vercel_         | vultr_          |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
-| webgo_          | wedos_          | yandex_         | yandexcloud_    | zeit_           |
+| wedos_          | yandex_         | yandexcloud_    | zeit_           | zilore_         |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
-| zilore_         | zonomi_         |                 |                 |                 |
+| zonomi_         |                 |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 
 .. tag: providers-table-end

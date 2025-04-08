@@ -249,9 +249,6 @@ List of options
 .. _vultr:
 .. include:: providers/vultr.rst
 
-.. _webgo:
-.. include:: providers/webgo.rst
-
 .. _wedos:
 .. include:: providers/wedos.rst
 
