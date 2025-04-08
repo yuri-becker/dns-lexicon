@@ -18,7 +18,7 @@
 
 ### Modified 
 * Migrate build tooling from poetry to uv
-* Provider `porkbun` now use the new API exposed by the DNS provider (#20)
+* Provider `porkbun` now use the new API exposed by the DNS provider (#2069)
 
 ### Removed
 * Drop support of Python 3.8
