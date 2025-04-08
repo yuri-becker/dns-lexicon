@@ -191,6 +191,7 @@ Lexicon currently supports 88 providers:
 .. _regfish: https://regfish.readme.io/
 .. _route53: https://docs.aws.amazon.com/route53/latest/apireference/welcome.html
 .. _safedns: https://developers.ukfast.io/documentation/safedns
+.. _scaleway: https://www.scaleway.com/en/developers/api/domains-and-dns
 .. _sakuracloud: https://developer.sakura.ad.jp/cloud/api/1.1/
 .. _softlayer: https://sldn.softlayer.com/article/rest#http_request_types
 .. _timeweb: https://timeweb.cloud/api-docs
