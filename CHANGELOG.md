@@ -7,7 +7,9 @@
 
 ### Modified
 * In `ionos` provider, authentication is not required
-  when using automatic detection of registrar
+  when using automatic detection of registrar (#22)
+* In `hover` provider, prevent to send empty bodies in requests
+  that would be refused by the API (#26)
 
 ### Removed
 * Remove `webgo` provider (#20)
