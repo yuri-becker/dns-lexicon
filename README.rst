@@ -107,11 +107,11 @@ Lexicon currently supports 88 providers:
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 | powerdns_       | qcloud_         | rackspace_      | rage4_          | rcodezero_      |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
-| regfish_        | route53_        | safedns_        | sakuracloud_    | softlayer_      |
+| regfish_        | route53_        | safedns_        | sakuracloud_    | scaleway_       |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
-| timeweb_        | transip_        | ultradns_       | valuedomain_    | vercel_         |
+| softlayer_      | timeweb_        | transip_        | ultradns_       | valuedomain_    |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
-| vultr_          | wedos_          | yandex_         | yandexcloud_    | zeit_           |
+| vercel_         | vultr_          | wedos_          | yandex_         | yandexcloud_    |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
 | zeit_           | zilore_         | zonomi_         |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+-----------------+
