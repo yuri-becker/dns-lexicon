@@ -5,14 +5,16 @@
 * Add `devnomads` provider (#19)
 * Add `scaleway` provider (#21)
 
+### Modified
+* In `ionos` provider, authentication is not required
+  when using automatic detection of registrar
+
 ### Removed
 * Remove `webgo` provider (#20)
 
 ## 3.20.1 - 19/12/2024
 ### Modified
 * Setup Docker entrypoint to run Lexicon by default
-* IONOS authentication is not required when using automatic detection of
-  registrar
 
 ## 3.20.0 - 12/12/2024
 ### Modified
