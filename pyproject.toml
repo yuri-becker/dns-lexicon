@@ -30,7 +30,7 @@ authors = [
     { name = "Jason Kulatunga", email = "jason@thesparktree.com" },
     { name = "Adrien Ferrand", email = "ferrand.ad@gmail.com" },
 ]
-readme = "README.rst"
+readme = "pypi_readme.rst"
 
 requires-python = ">= 3.9"
 dependencies = [
