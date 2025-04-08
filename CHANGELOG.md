@@ -1,7 +1,10 @@
 # Changelog
 
 ## master - CURRENT
-# Removed
+### Added
+* Add `devnomads` provider (#19)
+
+### Removed
 * Remove `webgo` provider (#20)
 
 ## 3.20.1 - 19/12/2024

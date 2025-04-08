@@ -35,7 +35,7 @@ class Provider(BaseProvider):
 
     @staticmethod
     def configure_parser(parser: ArgumentParser) -> None:
-        parser.add_argument("--auth-token", help="Auth token.")
+        parser.add_argument("--auth-token", help="Specify token for authentication.")
 
     def __init__(self, config):
         super(Provider, self).__init__(config)

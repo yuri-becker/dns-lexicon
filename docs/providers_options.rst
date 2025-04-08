@@ -39,6 +39,9 @@ List of options
 .. _ddns:
 .. include:: providers/ddns.rst
 
+.. _devnomads:
+.. include:: providers/devnomads.rst
+
 .. _digitalocean:
 .. include:: providers/digitalocean.rst
 
