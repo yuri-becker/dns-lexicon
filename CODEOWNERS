@@ -22,6 +22,7 @@ lexicon/providers/cloudxns.py       @zh99998
 lexicon/providers/conoha.py         @kaz
 lexicon/providers/constellix.py     @pmkane
 lexicon/providers/ddns.py           @trinity-1686a
+lexicon/providers/devnomads.py      @loekg
 lexicon/providers/digitalocean.py   @analogj @foxwoods369
 lexicon/providers/dinahosting.py    @iperurena
 lexicon/providers/directadmin.py    @bauglir
@@ -87,7 +88,6 @@ lexicon/providers/ultradns.py	    @abligh
 lexicon/providers/valuedomain.py    @wak109
 lexicon/providers/vercel.py         @adferrand
 lexicon/providers/vultr.py          @analogj
-lexicon/providers/webgo.py          @mod242
 lexicon/providers/wedos.py          @vojtakaniok
 lexicon/providers/yandex.py         @kharkevich
 lexicon/providers/yandexcloud.py    @paskal

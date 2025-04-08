@@ -39,6 +39,9 @@ List of options
 .. _ddns:
 .. include:: providers/ddns.rst
 
+.. _devnomads:
+.. include:: providers/devnomads.rst
+
 .. _digitalocean:
 .. include:: providers/digitalocean.rst
 
@@ -228,6 +231,9 @@ List of options
 .. _sakuracloud:
 .. include:: providers/sakuracloud.rst
 
+.. _scaleway:
+.. include:: providers/scaleway.rst
+
 .. _softlayer:
 .. include:: providers/softlayer.rst
 
@@ -248,9 +254,6 @@ List of options
 
 .. _vultr:
 .. include:: providers/vultr.rst
-
-.. _webgo:
-.. include:: providers/webgo.rst
 
 .. _wedos:
 .. include:: providers/wedos.rst
