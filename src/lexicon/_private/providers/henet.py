@@ -144,7 +144,7 @@ class Provider(BaseProvider):
         def is_dns_tr_type(klass):
             return klass and re.compile("dns_tr").search(klass)
 
-        records = html.findAll("tr", class_=is_dns_tr_type)
+        records = html.find_all("tr", class_=is_dns_tr_type)
 
         # If the tag couldn't be found, error, otherwise, return the value of the tag
         if records is None or not records:
@@ -153,7 +153,7 @@ class Provider(BaseProvider):
 
         new_records = []
         for dns_tr in records:
-            tds = dns_tr.findAll("td")
+            tds = dns_tr.find_all("td")
             # Process HTML in the TR children to derive each object
             rec = {}
             rec["zone_id"] = tds[0].string
