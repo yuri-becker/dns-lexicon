@@ -1,8 +1,6 @@
 # Changelog
 
 ## master - CURRENT
-
-## 3.21.1 - 28/04/2025
 ### Modified
 * Make provider `dynu` able to work not only with the root domain of a zone (#31)
 * Remove the usage of a deprecated function of beautifulsoup (#29)

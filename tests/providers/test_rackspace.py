@@ -1,4 +1,4 @@
-""" "Test for rackspace implementation of the lexicon interface"""
+""""Test for rackspace implementation of the lexicon interface"""
 
 from unittest import TestCase
 
