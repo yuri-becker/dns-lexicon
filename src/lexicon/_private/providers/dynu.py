@@ -33,10 +33,11 @@ class Provider(BaseProvider):
         self.api_endpoint = "https://api.dynu.com/v2"
 
     def authenticate(self):
+        root_domain_name = self._get_root_domain_name()
         data = self._get("/dns")
         domains = data["domains"]
         for domain in domains:
-            if domain["name"].lower() == self.domain.lower():
+            if domain["name"].lower() == root_domain_name:
                 self.domain_id = domain["id"]
                 break
         else:
@@ -183,6 +184,11 @@ class Provider(BaseProvider):
             )
         response.raise_for_status()
         return response.json()
+
+    # Fetch the root domain name
+    def _get_root_domain_name(self):
+        payload = self._get(f"/dns/getroot/{self.domain}")
+        return payload["domainName"]
 
     # Fetch a record by its ID
     def _fetch_record(self, identifier):
