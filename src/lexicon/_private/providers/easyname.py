@@ -273,7 +273,7 @@ class Provider(BaseProvider):
                     rec["priority"] = (columns[3].contents[1].string or "").strip()
                     rec["ttl"] = (columns[4].contents[1].string or "").strip()
                     rec["id"] = ""
-                    for a in columns[5].findAll(
+                    for a in columns[5].find_all(
                         "a", class_="button button--transparent"
                     ):
                         rec["id"] = int(a["href"].rsplit("/", 1)[-1])
@@ -367,7 +367,7 @@ class Provider(BaseProvider):
         def _is_zone_tr(elm):
             return elm.name.lower() == "tr" and (elm.has_attr("class"))
 
-        rows = dns_table.findAll(_is_zone_tr)
+        rows = dns_table.find_all(_is_zone_tr)
         assert rows is not None and rows, "Could not find any DNS entries"
         return rows
 
