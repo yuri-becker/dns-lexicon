@@ -5,7 +5,7 @@ import re
 from argparse import ArgumentParser
 from typing import List
 
-from bs4 import BeautifulSoup  # type: ignore
+from bs4 import BeautifulSoup
 from requests import Session
 
 from lexicon.exceptions import AuthenticationError

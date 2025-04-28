@@ -5,7 +5,7 @@ import logging
 from argparse import ArgumentParser
 from typing import List
 
-from bs4 import BeautifulSoup, Tag  # type: ignore
+from bs4 import BeautifulSoup, Tag
 from requests import Response, Session
 
 from lexicon.interfaces import Provider as BaseProvider

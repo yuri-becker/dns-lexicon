@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 from typing import List
 
 import requests
-from bs4 import BeautifulSoup  # type: ignore
+from bs4 import BeautifulSoup
 
 from lexicon.exceptions import AuthenticationError
 from lexicon.interfaces import Provider as BaseProvider
