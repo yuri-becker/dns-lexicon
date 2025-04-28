@@ -68,7 +68,7 @@ class Provider(BaseProvider):
             "Domain": self.domain,
             "SubDomain": self._relative_name(name),
             "RecordType": rtype,
-            "RecordLine": "\u9ED8\u8BA4",
+            "RecordLine": "\u9ed8\u8ba4",
             "Value": content,
         }
         if self._get_lexicon_option("ttl"):
@@ -137,7 +137,7 @@ class Provider(BaseProvider):
             "Domain": self.domain,
             "SubDomain": self._relative_name(name),
             "RecordType": rtype,
-            "RecordLine": "\u9ED8\u8BA4",
+            "RecordLine": "\u9ed8\u8ba4",
             "Value": content,
             "RecordId": identifier,
         }
