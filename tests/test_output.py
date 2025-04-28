@@ -1,4 +1,4 @@
-""" Ensure that stdout corresponds to the given reference output """
+"""Ensure that stdout corresponds to the given reference output"""
 
 import json
 
