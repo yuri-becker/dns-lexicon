@@ -78,7 +78,7 @@ class Provider(BaseProvider):
                     name=self._get_record_name(self.domain, name),
                     type=rtype,
                     ttl=int(ttl) if ttl else None,
-                    records=[RrsetRecord(value=name)],
+                    records=[self._record_from(rtype, content)],
                 ),
             ),
         )
@@ -126,7 +126,7 @@ class Provider(BaseProvider):
                 f"/{self.domain_id}/rrsets/{rrset_name}/{rtype}/actions/set_records",
                 cast(
                     dict[str, Any],
-                    SetRecordsRequest(records=[RrsetRecord(value=content)]),
+                    SetRecordsRequest(records=[self._record_from(rtype, content)]),
                 ),
             )
 
@@ -210,3 +210,13 @@ class Provider(BaseProvider):
         if record_name.rstrip(".").endswith(domain):
             record_name = self._relative_name(record_name)
         return record_name
+
+    @staticmethod
+    def _record_from(rtype: str, content: str) -> RrsetRecord:
+        escaped_content = (
+            "".join(map(lambda part: f'"{part}"', content.split()))
+            if rtype == "TXT"
+            else content
+        )
+        print(escaped_content)
+        return RrsetRecord({"value": escaped_content})
