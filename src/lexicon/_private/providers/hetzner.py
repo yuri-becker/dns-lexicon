@@ -1,5 +1,3 @@
-"""Module provider for Hetzner"""
-
 import json
 import logging
 from argparse import ArgumentParser
@@ -13,29 +11,31 @@ from lexicon.interfaces import Provider as BaseProvider
 
 LOGGER = logging.getLogger(__name__)
 
-RrsetRecord = TypedDict("RrsetRecord", {"value": str})
-RrSet = TypedDict(
-    "RrSet",
+Record = TypedDict("Record", {"value": str})
+RecordSet = TypedDict(
+    "RecordSet",
     {
         "id": str,
         "name": str,
         "type": str,
         "ttl": int,
-        "records": list[RrsetRecord],
+        "records": list[Record],
     },
 )
-CreateRecordRequest = TypedDict(
-    "CreateRecordRequest",
+CreateRecordSetRequest = TypedDict(
+    "CreateRecordSetRequest",
     {
         "name": str,
         "type": str,
         "ttl": int | None,
-        "records": list[RrsetRecord],
+        "records": list[Record],
     },
 )
-SetRecordsRequest = TypedDict(
-    "SetRecordsRequest", {"records": list[RrsetRecord]}
+AddRecordsRequest = TypedDict(
+    "AddRecordsRequest", {"ttl": int | None, "records": list[Record]}
 )
+SetRecordsRequest = TypedDict("SetRecordsRequest", {"records": list[Record]})
+RemoveRecordsRequest = TypedDict("RemoveRecordsRequest", {"records": list[Record]})
 SetTtlRequest = TypedDict("SetTtlRequest", {"ttl": int})
 
 
@@ -57,39 +57,26 @@ class Provider(BaseProvider):
 
     @staticmethod
     def configure_parser(parser: ArgumentParser) -> None:
-        parser.add_argument(
-            "--auth-token", help="Specify Hetzner DNS API token"
-        )
+        parser.add_argument("--auth-token", help="Specify Hetzner DNS API token")
 
     def __init__(self, config: ConfigResolver | dict[str, Any]):
         super(Provider, self).__init__(config)
 
     def authenticate(self) -> None:
-        self.domain_id = self._get_zone_by_domain(self.domain)["id"]
-
-    def cleanup(self) -> None:
-        pass
+        self.domain_id = self._fetch_zone(self.domain)["id"]
 
     def create_record(self, rtype: str, name: str, content: str) -> bool:
-        records = self.list_records(rtype, name, content)
-        if len(records) >= 1:
-            for record in records:
-                LOGGER.info(
-                    f"Record {rtype} {name} {content} already exists and has\
-                    id {record['id']}",
-                )
+        duplicate_records = self.list_records(rtype, name, content)
+        if len(duplicate_records) > 0:
+            LOGGER.info(f"Record {rtype} {name} {content} already exists")
             return True
 
-        ttl = self._get_lexicon_option("ttl")
         self._post(
-            f"/{self.domain_id}/rrsets",
+            f"{self._rrset_url(name, rtype)}/actions/add_records",
             cast(
                 dict[str, Any],
-                CreateRecordRequest(
-                    name=self._get_record_name(self.domain, name),
-                    type=rtype,
-                    ttl=int(ttl) if ttl else None,
-                    records=[self._record_from(rtype, content)],
+                AddRecordsRequest(
+                    ttl=self._get_ttl(), records=[self._record_from(rtype, content)]
                 ),
             ),
         )
@@ -101,23 +88,15 @@ class Provider(BaseProvider):
         name: str | None = None,
         content: str | None = None,
     ) -> list[dict[str, Any]]:
-        rrsets: list[RrSet] = self._get(f"/{self.domain_id}/rrsets")["rrsets"]
+        record_sets: list[RecordSet] = self._get(f"{self._zone_url()}/rrsets")["rrsets"]
+        name = self._full_name(name) if name else None
         return [
-            {
-                "id": rrset["id"],
-                "name": self._full_name(rrset["name"]),
-                "content": record["value"],
-                "type": rrset["type"],
-                "ttl": rrset["ttl"],
-            }
-            for rrset in rrsets
-            for record in rrset["records"]
-            if (rtype is None or rrset["type"] == rtype)
-            and (
-                name is None
-                or self._full_name(rrset["name"]) == self._full_name(name)
-            )
-            and (content is None or record["value"] == content)
+            record
+            for record_set in record_sets
+            for record in self._rrset_to_records(record_set)
+            if (rtype is None or record["type"] == rtype)
+            and (name is None or record["name"] == name)
+            and (content is None or record["content"] == content)
         ]
 
     def update_record(
@@ -127,32 +106,19 @@ class Provider(BaseProvider):
         name: str | None = None,
         content: str | None = None,
     ) -> bool:
-        if name is None:
-            raise LexiconError("Cannot update record - name has to be set.")
-        if rtype is None:
-            raise LexiconError("Cannot update record - rtype has to be set.")
-
-        rrset_name = self._get_record_name(self.domain, name)
-        actions_url = f"/{self.domain_id}/rrsets/{rrset_name}/{rtype}/actions"
-        if content is not None:
-            self._post(
-                f"{actions_url}/set_records",
-                cast(
-                    dict[str, Any],
-                    SetRecordsRequest(
-                        records=[self._record_from(rtype, content)]
-                    ),
-                ),
+        if identifier is None and (rtype is None or name is None):
+            raise LexiconError(
+                "Either identifier or both rtype and name need to be set in order to match a record."
             )
-
-        ttl = self._get_lexicon_option("ttl")
-        if ttl is not None:
-            self._post(
-                f"{actions_url}/change_ttl",
-                cast(dict[str, Any], SetTtlRequest(ttl=int(ttl))),
-            )
-
-        return True
+        if identifier is not None and content is not None:
+            self._move_record(identifier, content, to_rtype=rtype, to_name=name)
+            return True
+        elif rtype is not None and name is not None and content is not None:
+            # identifier doesnt matter in this case
+            self._change_content(rtype, name, new_content=content)
+            return True
+        else:
+            return False
 
     def delete_record(
         self,
@@ -161,14 +127,35 @@ class Provider(BaseProvider):
         name: str | None = None,
         content: str | None = None,
     ) -> bool:
-        if name is None:
-            raise LexiconError("Cannot delete record - name has to be set.")
-        if rtype is None:
-            raise LexiconError("Cannot delete record - rtype has to be set.")
+        if identifier is None and (rtype is None or name is None):
+            raise LexiconError(
+                "Either identifier or both rtype and name need to be passed."
+            )
 
-        rrset_name = self._get_record_name(self.domain, name)
-        self._delete(f"/{self.domain_id}/rrsets/{rrset_name}/{rtype}")
-        return True
+        if identifier:
+            record = self._find_record(identifier)
+            if record is None:
+                raise LexiconError(f"Record with the id {identifier} does not exist.")
+            rtype = record["type"]
+            name = record["name"]
+        name = cast(str, name)
+        rtype = cast(str, rtype)
+        if content is None:
+            # Entire record set should be deleted
+            self._delete(self._rrset_url(name, rtype))
+            return True
+        else:
+            # Record should be taken out of set
+            self._post(
+                f"{self._rrset_url(name, rtype)}/actions/remove_records",
+                cast(
+                    dict[str, Any],
+                    RemoveRecordsRequest(
+                        {"records": [self._record_from(rtype, content)]}
+                    ),
+                ),
+            )
+            return True
 
     # Helpers
     def _request(
@@ -180,14 +167,14 @@ class Provider(BaseProvider):
     ):
         data = data or {}
         query_params = query_params or {}
+        print(f"{action} on {url} with {data}")
         response = requests.request(
             action,
             self.API_ENDPOINT + url,
             params=query_params,
             data=json.dumps(data),
             headers={
-                "Authorization":
-                    f"Bearer {self._get_provider_option('auth_token')}",
+                "Authorization": f"Bearer {self._get_provider_option('auth_token')}",
                 "Content-Type": "application/json",
             },
         )
@@ -195,18 +182,7 @@ class Provider(BaseProvider):
         response.raise_for_status()
         return response.json()
 
-    def _get_zone_by_domain(self, domain: str) -> dict[str, Any]:
-        """
-        Requests the zone object for the given domain name
-        :param domain: Name of domain for which dns zone should be searched
-        :rtype: dict
-        :return: "zone" field of the response at
-            docs.hetzner.cloud/reference/cloud#zones-get-a-zone
-        :raises Exception: If no zone was found
-        :raises KeyError, ValueError: If the response is malformed
-        :raises urllib.error.HttpError: If request to /zones/domain did not
-            return 200
-        """
+    def _fetch_zone(self, domain: str) -> dict[str, Any]:
         try:
             return self._get(f"/{domain}")["zone"]
         except requests.HTTPError as err:
@@ -217,25 +193,85 @@ class Provider(BaseProvider):
             else:
                 raise LexiconError(err)
 
-    def _get_record_name(self, domain: str, record_name: str) -> str:
+    def _to_rrset_name(self, domain: str, record_name: str) -> str:
         """
-        Get the name attribute appropriate for hetzner api. This means it's
-        the name without domain name if record name ends with managed domain
-        name else a fqdn
-        :param domain: Name of domain for which dns zone should be searched
-        :param record_name: The record name to convert
-        :return: The record name in an appropriate format for hetzner api
+        Hetzner record set (rrset) names have a different format.
         """
         if record_name.rstrip(".").endswith(domain):
-            record_name = self._relative_name(record_name)
+            return self._relative_name(record_name)
         return record_name
 
+    def _move_record(
+        self, identifier: str, content: str, to_rtype: str | None, to_name: str | None
+    ):
+        if to_rtype is None and to_name is None:
+            raise LexiconError("Either rtype or name must be set.")
+
+        original_record = self._find_record(identifier, content)
+        if original_record is None:
+            raise LexiconError("No record with identifier found")
+
+        self.create_record(
+            rtype=to_rtype or original_record["type"],
+            name=to_name or original_record["name"],
+            content=content,
+        )
+
+        self.delete_record(identifier=identifier, content=content)
+        return
+
+    def _change_content(self, rtype: str, name: str, new_content: str):
+        self._post(
+            f"{self._rrset_url(name, rtype)}/actions/set_records",
+            cast(
+                dict[str, Any],
+                SetRecordsRequest(records=[self._record_from(rtype, new_content)]),
+            ),
+        )
+        return
+
+    def _find_record(
+        self, identifier: str, content: str | None = None
+    ) -> dict[str, Any] | None:
+        return next(
+            iter(
+                [
+                    record
+                    for record in self.list_records(content=content)
+                    if record["id"] == identifier
+                ]
+            )
+        )
+
+    def _get_ttl(self) -> int | None:
+        return int(ttl) if (ttl := self._get_lexicon_option("ttl")) else None
+
+    def _zone_url(self) -> str:
+        return f"/{self.domain_id}"
+
+    def _rrset_url(self, name: str, rtype: str) -> str:
+        rrset_name = self._to_rrset_name(self.domain, name)
+        return f"{self._zone_url()}/rrsets/{rrset_name}/{rtype}"
+
+    def _rrset_to_records(self, rrset: RecordSet) -> list[dict[str, Any]]:
+        return [
+            {
+                "id": rrset["id"],
+                "name": self._full_name(rrset["name"]),
+                "content": record["value"]
+                if rrset["type"] != "TXT"
+                else record["value"].replace('""', " ").lstrip('"').rstrip('"'),
+                "type": rrset["type"],
+                "ttl": rrset["ttl"],
+            }
+            for record in rrset["records"]
+        ]
+
     @staticmethod
-    def _record_from(rtype: str, content: str) -> RrsetRecord:
+    def _record_from(rtype: str, content: str) -> Record:
         escaped_content = (
             "".join(map(lambda part: f'"{part}"', content.split()))
             if rtype == "TXT"
             else content
         )
-        print(escaped_content)
-        return RrsetRecord({"value": escaped_content})
+        return Record({"value": escaped_content})
