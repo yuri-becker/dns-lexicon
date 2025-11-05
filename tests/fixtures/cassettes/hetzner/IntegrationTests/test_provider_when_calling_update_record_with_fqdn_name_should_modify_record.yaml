@@ -1,0 +1,1251 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/devcoop.de
+  response:
+    body:
+      string: "{\n    \"zone\": {\n        \"id\": 53091,\n        \"name\": \"devcoop.de\",\n
+        \       \"mode\": \"primary\",\n        \"ttl\": 86400,\n        \"labels\":
+        {},\n        \"primary_nameservers\": [],\n        \"created\": \"2025-10-28T13:34:24Z\",\n
+        \       \"protection\": {\n            \"delete\": false\n        },\n        \"status\":
+        \"updating\",\n        \"authoritative_nameservers\": {\n            \"assigned\":
+        [\n                \"hydrogen.ns.hetzner.com.\",\n                \"oxygen.ns.hetzner.com.\",\n
+        \               \"helium.ns.hetzner.de.\"\n            ],\n            \"delegated\":
+        [\n                \"helium.ns.hetzner.de.\",\n                \"hydrogen.ns.hetzner.com.\",\n
+        \               \"oxygen.ns.hetzner.com.\"\n            ],\n            \"delegation_last_check\":
+        \"2025-10-28T13:34:54Z\",\n            \"delegation_status\": \"valid\"\n
+        \       },\n        \"record_count\": 25,\n        \"registrar\": \"hetzner\"\n
+        \   }\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-cc09977995218675272507bcacacf3e7-ffe7043679f95f07-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - cc09977995218675272507bcacacf3e7:ffe7043679f95f07:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - cc09977995218675272507bcacacf3e7
+      content-length:
+      - '862'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3528'
+      ratelimit-reset:
+      - '1762337113'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets
+  response:
+    body:
+      string: "{\n    \"meta\": {\n        \"pagination\": {\n            \"last_page\":
+        1,\n            \"next_page\": null,\n            \"page\": 1,\n            \"per_page\":
+        25,\n            \"previous_page\": null,\n            \"total_entries\":
+        21\n        }\n    },\n    \"rrsets\": [\n        {\n            \"id\": \"@/NS\",\n
+        \           \"name\": \"@\",\n            \"type\": \"NS\",\n            \"ttl\":
+        null,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"helium.ns.hetzner.de.\",\n                    \"comment\": \"\"\n                },\n
+        \               {\n                    \"value\": \"hydrogen.ns.hetzner.com.\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"oxygen.ns.hetzner.com.\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"@/SOA\",\n            \"name\": \"@\",\n
+        \           \"type\": \"SOA\",\n            \"ttl\": null,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"hydrogen.ns.hetzner.com. dns.hetzner.com. 2025110631 86400 10800 3600000
+        3600\",\n                    \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/AAAA\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:1c1c:4181::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/A\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"A\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"195.201.131.78\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"nominatim/AAAA\",\n
+        \           \"name\": \"nominatim\",\n            \"type\": \"AAAA\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"2a01:4f8:c012:9603::1\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"nominatim/A\",\n            \"name\": \"nominatim\",\n            \"type\":
+        \"A\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"128.140.58.208\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"localhost/A\",\n
+        \           \"name\": \"localhost\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"127.0.0.1\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"docs/CNAME\",\n            \"name\": \"docs\",\n            \"type\": \"CNAME\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"docs.example.com\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.fqdn/TXT\",\n
+        \           \"name\": \"_acme-challenge.fqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.full/TXT\",\n
+        \           \"name\": \"_acme-challenge.full\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.test/TXT\",\n
+        \           \"name\": \"_acme-challenge.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.createrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.createrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"_acme-challenge.noop/TXT\",\n            \"name\":
+        \"_acme-challenge.noop\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"_acme-challenge.deleterecordinset/TXT\",\n            \"name\": \"_acme-challenge.deleterecordinset\",\n
+        \           \"type\": \"TXT\",\n            \"ttl\": 3600,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken2\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"ttl.fqdn/TXT\",\n            \"name\": \"ttl.fqdn\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"ttlshouldbe3600\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.listrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.listrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"random.fqdntest/TXT\",\n            \"name\":
+        \"random.fqdntest\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"random.fulltest/TXT\",\n            \"name\": \"random.fulltest\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"random.test/TXT\",\n
+        \           \"name\": \"random.test\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"updated.test/TXT\",\n            \"name\": \"updated.test\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.nameonly.test/TXT\",\n
+        \           \"name\": \"orig.nameonly.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"updated\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        }\n    ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Link:
+      - <https://api.hetzner.cloud/v1/zones/53091/rrsets?page=1&per_page=25>; rel="last"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-8bdedb8a3f9beedafc66cd20f65894d3-124603c9525117b6-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - 8bdedb8a3f9beedafc66cd20f65894d3:124603c9525117b6:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - 8bdedb8a3f9beedafc66cd20f65894d3
+      content-length:
+      - '10101'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3527'
+      ratelimit-reset:
+      - '1762337114'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"ttl": 3600, "records": [{"value": "\"challengetoken\""}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets/orig.testfqdn/TXT/actions/add_records
+  response:
+    body:
+      string: "{\n    \"action\": {\n        \"id\": 590729811150002,\n        \"status\":
+        \"running\",\n        \"command\": \"add_rrset_records\",\n        \"progress\":
+        0,\n        \"started\": \"2025-11-05T10:04:01.580256Z\",\n        \"finished\":
+        null,\n        \"error\": null,\n        \"resources\": [\n            {\n
+        \               \"id\": 53091,\n                \"type\": \"zone\"\n            }\n
+        \       ]\n    }\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '368'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-c13461061777dbbdd5ae00c29bf20fa7-8585c83806ac3fac-01
+      Uber-Trace-Id:
+      - c13461061777dbbdd5ae00c29bf20fa7:8585c83806ac3fac:0:1
+      X-Correlation-Id:
+      - c13461061777dbbdd5ae00c29bf20fa7
+      ratelimit-limit:
+      - '7200'
+      ratelimit-remaining:
+      - '7171'
+      ratelimit-reset:
+      - '1762337056'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets
+  response:
+    body:
+      string: "{\n    \"meta\": {\n        \"pagination\": {\n            \"last_page\":
+        1,\n            \"next_page\": null,\n            \"page\": 1,\n            \"per_page\":
+        25,\n            \"previous_page\": null,\n            \"total_entries\":
+        22\n        }\n    },\n    \"rrsets\": [\n        {\n            \"id\": \"@/NS\",\n
+        \           \"name\": \"@\",\n            \"type\": \"NS\",\n            \"ttl\":
+        null,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"helium.ns.hetzner.de.\",\n                    \"comment\": \"\"\n                },\n
+        \               {\n                    \"value\": \"hydrogen.ns.hetzner.com.\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"oxygen.ns.hetzner.com.\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"@/SOA\",\n            \"name\": \"@\",\n
+        \           \"type\": \"SOA\",\n            \"ttl\": null,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"hydrogen.ns.hetzner.com. dns.hetzner.com. 2025110632 86400 10800 3600000
+        3600\",\n                    \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"nominatim/A\",\n
+        \           \"name\": \"nominatim\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"128.140.58.208\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"nominatim/AAAA\",\n            \"name\": \"nominatim\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:c012:9603::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/A\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"A\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"195.201.131.78\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/AAAA\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:1c1c:4181::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"localhost/A\",\n
+        \           \"name\": \"localhost\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"127.0.0.1\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"docs/CNAME\",\n            \"name\": \"docs\",\n            \"type\": \"CNAME\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"docs.example.com\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.fqdn/TXT\",\n
+        \           \"name\": \"_acme-challenge.fqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.full/TXT\",\n
+        \           \"name\": \"_acme-challenge.full\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.test/TXT\",\n
+        \           \"name\": \"_acme-challenge.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.createrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.createrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"_acme-challenge.noop/TXT\",\n            \"name\":
+        \"_acme-challenge.noop\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"_acme-challenge.deleterecordinset/TXT\",\n            \"name\": \"_acme-challenge.deleterecordinset\",\n
+        \           \"type\": \"TXT\",\n            \"ttl\": 3600,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken2\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"ttl.fqdn/TXT\",\n            \"name\": \"ttl.fqdn\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"ttlshouldbe3600\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.listrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.listrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"random.fqdntest/TXT\",\n            \"name\":
+        \"random.fqdntest\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"random.fulltest/TXT\",\n            \"name\": \"random.fulltest\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"random.test/TXT\",\n
+        \           \"name\": \"random.test\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"updated.test/TXT\",\n            \"name\": \"updated.test\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.nameonly.test/TXT\",\n
+        \           \"name\": \"orig.nameonly.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"updated\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.testfqdn/TXT\",\n
+        \           \"name\": \"orig.testfqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        }\n    ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Link:
+      - <https://api.hetzner.cloud/v1/zones/53091/rrsets?page=1&per_page=25>; rel="last"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-19503a87b5b0e7c7b34335008db15376-2bb5effce2086a78-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - 19503a87b5b0e7c7b34335008db15376:2bb5effce2086a78:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - 19503a87b5b0e7c7b34335008db15376
+      content-length:
+      - '10538'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3526'
+      ratelimit-reset:
+      - '1762337115'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets
+  response:
+    body:
+      string: "{\n    \"meta\": {\n        \"pagination\": {\n            \"last_page\":
+        1,\n            \"next_page\": null,\n            \"page\": 1,\n            \"per_page\":
+        25,\n            \"previous_page\": null,\n            \"total_entries\":
+        22\n        }\n    },\n    \"rrsets\": [\n        {\n            \"id\": \"@/NS\",\n
+        \           \"name\": \"@\",\n            \"type\": \"NS\",\n            \"ttl\":
+        null,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"helium.ns.hetzner.de.\",\n                    \"comment\": \"\"\n                },\n
+        \               {\n                    \"value\": \"hydrogen.ns.hetzner.com.\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"oxygen.ns.hetzner.com.\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"@/SOA\",\n            \"name\": \"@\",\n
+        \           \"type\": \"SOA\",\n            \"ttl\": null,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"hydrogen.ns.hetzner.com. dns.hetzner.com. 2025110632 86400 10800 3600000
+        3600\",\n                    \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"nominatim/A\",\n
+        \           \"name\": \"nominatim\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"128.140.58.208\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"nominatim/AAAA\",\n            \"name\": \"nominatim\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:c012:9603::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/A\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"A\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"195.201.131.78\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/AAAA\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:1c1c:4181::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"localhost/A\",\n
+        \           \"name\": \"localhost\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"127.0.0.1\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"docs/CNAME\",\n            \"name\": \"docs\",\n            \"type\": \"CNAME\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"docs.example.com\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.fqdn/TXT\",\n
+        \           \"name\": \"_acme-challenge.fqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.full/TXT\",\n
+        \           \"name\": \"_acme-challenge.full\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.test/TXT\",\n
+        \           \"name\": \"_acme-challenge.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.createrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.createrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"_acme-challenge.noop/TXT\",\n            \"name\":
+        \"_acme-challenge.noop\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"_acme-challenge.deleterecordinset/TXT\",\n            \"name\": \"_acme-challenge.deleterecordinset\",\n
+        \           \"type\": \"TXT\",\n            \"ttl\": 3600,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken2\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"ttl.fqdn/TXT\",\n            \"name\": \"ttl.fqdn\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"ttlshouldbe3600\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.listrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.listrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"random.fqdntest/TXT\",\n            \"name\":
+        \"random.fqdntest\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"random.fulltest/TXT\",\n            \"name\": \"random.fulltest\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"random.test/TXT\",\n
+        \           \"name\": \"random.test\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"updated.test/TXT\",\n            \"name\": \"updated.test\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.nameonly.test/TXT\",\n
+        \           \"name\": \"orig.nameonly.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"updated\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.testfqdn/TXT\",\n
+        \           \"name\": \"orig.testfqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        }\n    ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Link:
+      - <https://api.hetzner.cloud/v1/zones/53091/rrsets?page=1&per_page=25>; rel="last"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-6970e9cd43f0c163e5c2867c786b5f6e-2eec9fe2dee19b0b-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - 6970e9cd43f0c163e5c2867c786b5f6e:2eec9fe2dee19b0b:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - 6970e9cd43f0c163e5c2867c786b5f6e
+      content-length:
+      - '10538'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3525'
+      ratelimit-reset:
+      - '1762337116'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets
+  response:
+    body:
+      string: "{\n    \"meta\": {\n        \"pagination\": {\n            \"last_page\":
+        1,\n            \"next_page\": null,\n            \"page\": 1,\n            \"per_page\":
+        25,\n            \"previous_page\": null,\n            \"total_entries\":
+        22\n        }\n    },\n    \"rrsets\": [\n        {\n            \"id\": \"@/NS\",\n
+        \           \"name\": \"@\",\n            \"type\": \"NS\",\n            \"ttl\":
+        null,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"helium.ns.hetzner.de.\",\n                    \"comment\": \"\"\n                },\n
+        \               {\n                    \"value\": \"hydrogen.ns.hetzner.com.\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"oxygen.ns.hetzner.com.\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"@/SOA\",\n            \"name\": \"@\",\n
+        \           \"type\": \"SOA\",\n            \"ttl\": null,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"hydrogen.ns.hetzner.com. dns.hetzner.com. 2025110632 86400 10800 3600000
+        3600\",\n                    \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"nominatim/A\",\n
+        \           \"name\": \"nominatim\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"128.140.58.208\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"nominatim/AAAA\",\n            \"name\": \"nominatim\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:c012:9603::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/A\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"A\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"195.201.131.78\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/AAAA\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:1c1c:4181::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"localhost/A\",\n
+        \           \"name\": \"localhost\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"127.0.0.1\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"docs/CNAME\",\n            \"name\": \"docs\",\n            \"type\": \"CNAME\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"docs.example.com\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.fqdn/TXT\",\n
+        \           \"name\": \"_acme-challenge.fqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.full/TXT\",\n
+        \           \"name\": \"_acme-challenge.full\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.test/TXT\",\n
+        \           \"name\": \"_acme-challenge.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.createrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.createrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"_acme-challenge.noop/TXT\",\n            \"name\":
+        \"_acme-challenge.noop\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"_acme-challenge.deleterecordinset/TXT\",\n            \"name\": \"_acme-challenge.deleterecordinset\",\n
+        \           \"type\": \"TXT\",\n            \"ttl\": 3600,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken2\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"ttl.fqdn/TXT\",\n            \"name\": \"ttl.fqdn\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"ttlshouldbe3600\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.listrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.listrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"random.fqdntest/TXT\",\n            \"name\":
+        \"random.fqdntest\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"random.fulltest/TXT\",\n            \"name\": \"random.fulltest\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"random.test/TXT\",\n
+        \           \"name\": \"random.test\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"updated.test/TXT\",\n            \"name\": \"updated.test\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.nameonly.test/TXT\",\n
+        \           \"name\": \"orig.nameonly.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"updated\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.testfqdn/TXT\",\n
+        \           \"name\": \"orig.testfqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        }\n    ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Link:
+      - <https://api.hetzner.cloud/v1/zones/53091/rrsets?page=1&per_page=25>; rel="last"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-961438618415da8eacadce4b942175ad-f31d642e048940e3-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - 961438618415da8eacadce4b942175ad:f31d642e048940e3:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - 961438618415da8eacadce4b942175ad
+      content-length:
+      - '10538'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3524'
+      ratelimit-reset:
+      - '1762337117'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"ttl": 3600, "records": [{"value": "\"challengetoken\""}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets/updated.testfqdn/TXT/actions/add_records
+  response:
+    body:
+      string: "{\n    \"action\": {\n        \"id\": 590729811150006,\n        \"status\":
+        \"running\",\n        \"command\": \"add_rrset_records\",\n        \"progress\":
+        0,\n        \"started\": \"2025-11-05T10:04:01.914224Z\",\n        \"finished\":
+        null,\n        \"error\": null,\n        \"resources\": [\n            {\n
+        \               \"id\": 53091,\n                \"type\": \"zone\"\n            }\n
+        \       ]\n    }\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '368'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-77ce29257c1d8792cf995fb676b04821-858fe1d0c7327583-01
+      Uber-Trace-Id:
+      - 77ce29257c1d8792cf995fb676b04821:858fe1d0c7327583:0:1
+      X-Correlation-Id:
+      - 77ce29257c1d8792cf995fb676b04821
+      ratelimit-limit:
+      - '7200'
+      ratelimit-remaining:
+      - '7170'
+      ratelimit-reset:
+      - '1762337056'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets
+  response:
+    body:
+      string: "{\n    \"meta\": {\n        \"pagination\": {\n            \"last_page\":
+        1,\n            \"next_page\": null,\n            \"page\": 1,\n            \"per_page\":
+        25,\n            \"previous_page\": null,\n            \"total_entries\":
+        23\n        }\n    },\n    \"rrsets\": [\n        {\n            \"id\": \"@/NS\",\n
+        \           \"name\": \"@\",\n            \"type\": \"NS\",\n            \"ttl\":
+        null,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"helium.ns.hetzner.de.\",\n                    \"comment\": \"\"\n                },\n
+        \               {\n                    \"value\": \"hydrogen.ns.hetzner.com.\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"oxygen.ns.hetzner.com.\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"@/SOA\",\n            \"name\": \"@\",\n
+        \           \"type\": \"SOA\",\n            \"ttl\": null,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"hydrogen.ns.hetzner.com. dns.hetzner.com. 2025110632 86400 10800 3600000
+        3600\",\n                    \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"nominatim/A\",\n
+        \           \"name\": \"nominatim\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"128.140.58.208\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"nominatim/AAAA\",\n            \"name\": \"nominatim\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:c012:9603::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/A\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"A\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"195.201.131.78\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/AAAA\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:1c1c:4181::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"localhost/A\",\n
+        \           \"name\": \"localhost\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"127.0.0.1\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"docs/CNAME\",\n            \"name\": \"docs\",\n            \"type\": \"CNAME\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"docs.example.com\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.fqdn/TXT\",\n
+        \           \"name\": \"_acme-challenge.fqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.full/TXT\",\n
+        \           \"name\": \"_acme-challenge.full\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.test/TXT\",\n
+        \           \"name\": \"_acme-challenge.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.createrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.createrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"_acme-challenge.noop/TXT\",\n            \"name\":
+        \"_acme-challenge.noop\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"_acme-challenge.deleterecordinset/TXT\",\n            \"name\": \"_acme-challenge.deleterecordinset\",\n
+        \           \"type\": \"TXT\",\n            \"ttl\": 3600,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken2\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"ttl.fqdn/TXT\",\n            \"name\": \"ttl.fqdn\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"ttlshouldbe3600\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"_acme-challenge.listrecordset/TXT\",\n
+        \           \"name\": \"_acme-challenge.listrecordset\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken1\\\"\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"\\\"challengetoken2\\\"\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"random.fqdntest/TXT\",\n            \"name\":
+        \"random.fqdntest\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"random.fulltest/TXT\",\n            \"name\": \"random.fulltest\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"random.test/TXT\",\n
+        \           \"name\": \"random.test\",\n            \"type\": \"TXT\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"\\\"challengetoken\\\"\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"updated.test/TXT\",\n            \"name\": \"updated.test\",\n            \"type\":
+        \"TXT\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.nameonly.test/TXT\",\n
+        \           \"name\": \"orig.nameonly.test\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"updated\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"orig.testfqdn/TXT\",\n
+        \           \"name\": \"orig.testfqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"updated.testfqdn/TXT\",\n
+        \           \"name\": \"updated.testfqdn\",\n            \"type\": \"TXT\",\n
+        \           \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"\\\"challengetoken\\\"\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        }\n    ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:01 GMT
+      Link:
+      - <https://api.hetzner.cloud/v1/zones/53091/rrsets?page=1&per_page=25>; rel="last"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-f566eb381e88c6f330f75878b10758f6-7705d3cc0129111e-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - f566eb381e88c6f330f75878b10758f6:7705d3cc0129111e:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - f566eb381e88c6f330f75878b10758f6
+      content-length:
+      - '10981'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3523'
+      ratelimit-reset:
+      - '1762337118'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"records": [{"value": "\"challengetoken\""}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets/orig.testfqdn/TXT/actions/remove_records
+  response:
+    body:
+      string: "{\n    \"action\": {\n        \"id\": 590729811150007,\n        \"status\":
+        \"running\",\n        \"command\": \"remove_rrset_records\",\n        \"progress\":
+        0,\n        \"started\": \"2025-11-05T10:04:02.081497Z\",\n        \"finished\":
+        null,\n        \"error\": null,\n        \"resources\": [\n            {\n
+        \               \"id\": 53091,\n                \"type\": \"zone\"\n            }\n
+        \       ]\n    }\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '371'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:04:02 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-ca34d0d5476b42fa3423f7d3f7dd411c-4c6afa0fb9de6c16-01
+      Uber-Trace-Id:
+      - ca34d0d5476b42fa3423f7d3f7dd411c:4c6afa0fb9de6c16:0:1
+      X-Correlation-Id:
+      - ca34d0d5476b42fa3423f7d3f7dd411c
+      ratelimit-limit:
+      - '7200'
+      ratelimit-remaining:
+      - '7169'
+      ratelimit-reset:
+      - '1762337057'
+    status:
+      code: 201
+      message: Created
+version: 1

@@ -1,0 +1,237 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/devcoop.de
+  response:
+    body:
+      string: "{\n    \"zone\": {\n        \"id\": 53091,\n        \"name\": \"devcoop.de\",\n
+        \       \"mode\": \"primary\",\n        \"ttl\": 86400,\n        \"labels\":
+        {},\n        \"primary_nameservers\": [],\n        \"created\": \"2025-10-28T13:34:24Z\",\n
+        \       \"protection\": {\n            \"delete\": false\n        },\n        \"status\":
+        \"ok\",\n        \"authoritative_nameservers\": {\n            \"assigned\":
+        [\n                \"hydrogen.ns.hetzner.com.\",\n                \"oxygen.ns.hetzner.com.\",\n
+        \               \"helium.ns.hetzner.de.\"\n            ],\n            \"delegated\":
+        [\n                \"helium.ns.hetzner.de.\",\n                \"hydrogen.ns.hetzner.com.\",\n
+        \               \"oxygen.ns.hetzner.com.\"\n            ],\n            \"delegation_last_check\":
+        \"2025-10-28T13:34:54Z\",\n            \"delegation_status\": \"valid\"\n
+        \       },\n        \"record_count\": 8,\n        \"registrar\": \"hetzner\"\n
+        \   }\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:03:51 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-fbe97a9f2ee9e41718b01f6fff8639a3-eb80f11fb9c42ba7-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - fbe97a9f2ee9e41718b01f6fff8639a3:eb80f11fb9c42ba7:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - fbe97a9f2ee9e41718b01f6fff8639a3
+      content-length:
+      - '855'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3597'
+      ratelimit-reset:
+      - '1762337034'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets
+  response:
+    body:
+      string: "{\n    \"meta\": {\n        \"pagination\": {\n            \"last_page\":
+        1,\n            \"next_page\": null,\n            \"page\": 1,\n            \"per_page\":
+        25,\n            \"previous_page\": null,\n            \"total_entries\":
+        6\n        }\n    },\n    \"rrsets\": [\n        {\n            \"id\": \"@/NS\",\n
+        \           \"name\": \"@\",\n            \"type\": \"NS\",\n            \"ttl\":
+        null,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"helium.ns.hetzner.de.\",\n                    \"comment\": \"\"\n                },\n
+        \               {\n                    \"value\": \"hydrogen.ns.hetzner.com.\",\n
+        \                   \"comment\": \"\"\n                },\n                {\n
+        \                   \"value\": \"oxygen.ns.hetzner.com.\",\n                    \"comment\":
+        \"\"\n                }\n            ],\n            \"zone\": 53091\n        },\n
+        \       {\n            \"id\": \"@/SOA\",\n            \"name\": \"@\",\n
+        \           \"type\": \"SOA\",\n            \"ttl\": null,\n            \"labels\":
+        {},\n            \"protection\": {\n                \"change\": false\n            },\n
+        \           \"records\": [\n                {\n                    \"value\":
+        \"hydrogen.ns.hetzner.com. dns.hetzner.com. 2025110605 86400 10800 3600000
+        3600\",\n                    \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"nominatim/A\",\n
+        \           \"name\": \"nominatim\",\n            \"type\": \"A\",\n            \"ttl\":
+        3600,\n            \"labels\": {},\n            \"protection\": {\n                \"change\":
+        false\n            },\n            \"records\": [\n                {\n                    \"value\":
+        \"128.140.58.208\",\n                    \"comment\": \"\"\n                }\n
+        \           ],\n            \"zone\": 53091\n        },\n        {\n            \"id\":
+        \"nominatim/AAAA\",\n            \"name\": \"nominatim\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 3600,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:c012:9603::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/A\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"A\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"195.201.131.78\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        },\n        {\n            \"id\": \"osm.service.linke.projects/AAAA\",\n
+        \           \"name\": \"osm.service.linke.projects\",\n            \"type\":
+        \"AAAA\",\n            \"ttl\": 1800,\n            \"labels\": {},\n            \"protection\":
+        {\n                \"change\": false\n            },\n            \"records\":
+        [\n                {\n                    \"value\": \"2a01:4f8:1c1c:4181::1\",\n
+        \                   \"comment\": \"\"\n                }\n            ],\n
+        \           \"zone\": 53091\n        }\n    ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:03:51 GMT
+      Link:
+      - <https://api.hetzner.cloud/v1/zones/53091/rrsets?page=1&per_page=25>; rel="last"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-863d7d8f27e480d8438f88dd05c98336-f19d11d2360b6eb0-01
+      Transfer-Encoding:
+      - chunked
+      Uber-Trace-Id:
+      - 863d7d8f27e480d8438f88dd05c98336:f19d11d2360b6eb0:0:1
+      Vary:
+      - Accept-Encoding
+      X-Correlation-Id:
+      - 863d7d8f27e480d8438f88dd05c98336
+      content-length:
+      - '3173'
+      ratelimit-limit:
+      - '3600'
+      ratelimit-remaining:
+      - '3596'
+      ratelimit-reset:
+      - '1762337035'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"ttl": 3600, "records": [{"value": "127.0.0.1"}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '50'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://api.hetzner.cloud/v1/zones/53091/rrsets/localhost/A/actions/add_records
+  response:
+    body:
+      string: "{\n    \"action\": {\n        \"id\": 590729811149967,\n        \"status\":
+        \"running\",\n        \"command\": \"add_rrset_records\",\n        \"progress\":
+        0,\n        \"started\": \"2025-11-05T10:03:51.959326Z\",\n        \"finished\":
+        null,\n        \"error\": null,\n        \"resources\": [\n            {\n
+        \               \"id\": 53091,\n                \"type\": \"zone\"\n            }\n
+        \       ]\n    }\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - X-Requested-With,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Link,X-Correlation-ID
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '368'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 05 Nov 2025 10:03:51 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Traceparent:
+      - 00-bb0231f3355e3a74d07d93f03e8ef6fb-79c4e094fbfe1179-01
+      Uber-Trace-Id:
+      - bb0231f3355e3a74d07d93f03e8ef6fb:79c4e094fbfe1179:0:1
+      X-Correlation-Id:
+      - bb0231f3355e3a74d07d93f03e8ef6fb
+      ratelimit-limit:
+      - '7200'
+      ratelimit-remaining:
+      - '7199'
+      ratelimit-reset:
+      - '1762337032'
+    status:
+      code: 201
+      message: Created
+version: 1
