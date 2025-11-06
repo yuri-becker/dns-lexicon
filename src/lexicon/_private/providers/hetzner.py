@@ -1,7 +1,7 @@
 import json
 import logging
 from argparse import ArgumentParser
-from typing import Any, TypedDict, cast
+from typing import Any, Optional, TypedDict, Union, cast
 
 import requests
 
@@ -27,12 +27,12 @@ CreateRecordSetRequest = TypedDict(
     {
         "name": str,
         "type": str,
-        "ttl": int | None,
+        "ttl": Optional[int],
         "records": list[Record],
     },
 )
 AddRecordsRequest = TypedDict(
-    "AddRecordsRequest", {"ttl": int | None, "records": list[Record]}
+    "AddRecordsRequest", {"ttl": Optional[int], "records": list[Record]}
 )
 SetRecordsRequest = TypedDict("SetRecordsRequest", {"records": list[Record]})
 RemoveRecordsRequest = TypedDict("RemoveRecordsRequest", {"records": list[Record]})
@@ -59,7 +59,7 @@ class Provider(BaseProvider):
     def configure_parser(parser: ArgumentParser) -> None:
         parser.add_argument("--auth-token", help="Specify Hetzner DNS API token")
 
-    def __init__(self, config: ConfigResolver | dict[str, Any]):
+    def __init__(self, config: Union[ConfigResolver, dict[str, Any]]):
         super(Provider, self).__init__(config)
 
     def authenticate(self) -> None:
@@ -84,9 +84,9 @@ class Provider(BaseProvider):
 
     def list_records(
         self,
-        rtype: str | None = None,
-        name: str | None = None,
-        content: str | None = None,
+        rtype: Optional[str] = None,
+        name: Optional[str] = None,
+        content: Optional[str] = None,
     ) -> list[dict[str, Any]]:
         record_sets: list[RecordSet] = self._get(f"{self._zone_url()}/rrsets")["rrsets"]
         name = self._full_name(name) if name else None
@@ -101,10 +101,10 @@ class Provider(BaseProvider):
 
     def update_record(
         self,
-        identifier: str | None = None,
-        rtype: str | None = None,
-        name: str | None = None,
-        content: str | None = None,
+        identifier: Optional[str] = None,
+        rtype: Optional[str] = None,
+        name: Optional[str] = None,
+        content: Optional[str] = None,
     ) -> bool:
         if identifier is None and (rtype is None or name is None):
             raise LexiconError(
@@ -122,10 +122,10 @@ class Provider(BaseProvider):
 
     def delete_record(
         self,
-        identifier: str | None = None,
-        rtype: str | None = None,
-        name: str | None = None,
-        content: str | None = None,
+        identifier: Optional[str] = None,
+        rtype: Optional[str] = None,
+        name: Optional[str] = None,
+        content: Optional[str] = None,
     ) -> bool:
         if identifier is None and (rtype is None or name is None):
             raise LexiconError(
@@ -162,12 +162,11 @@ class Provider(BaseProvider):
         self,
         action: str = "GET",
         url: str = "/",
-        data: dict[str, Any] | None = {},
-        query_params: dict[str, Any] | None = None,
+        data: Optional[dict[str, Any]] = {},
+        query_params: Optional[dict[str, Any]] = None,
     ):
         data = data or {}
         query_params = query_params or {}
-        print(f"{action} on {url} with {data}")
         response = requests.request(
             action,
             self.API_ENDPOINT + url,
@@ -202,7 +201,7 @@ class Provider(BaseProvider):
         return record_name
 
     def _move_record(
-        self, identifier: str, content: str, to_rtype: str | None, to_name: str | None
+        self, identifier: str, content: str, to_rtype: Optional[str], to_name: Optional[str]
     ):
         if to_rtype is None and to_name is None:
             raise LexiconError("Either rtype or name must be set.")
@@ -231,8 +230,8 @@ class Provider(BaseProvider):
         return
 
     def _find_record(
-        self, identifier: str, content: str | None = None
-    ) -> dict[str, Any] | None:
+        self, identifier: str, content: Optional[str] = None
+    ) -> Optional[dict[str, Any]]:
         return next(
             iter(
                 [
@@ -243,7 +242,7 @@ class Provider(BaseProvider):
             )
         )
 
-    def _get_ttl(self) -> int | None:
+    def _get_ttl(self) -> Optional[int]:
         return int(ttl) if (ttl := self._get_lexicon_option("ttl")) else None
 
     def _zone_url(self) -> str:
